@@ -422,7 +422,7 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tnc-E3-V2P">
                                 <color key="backgroundColor" red="0.84857246679477116" green="0.6279422254637882" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="36" id="yBO-yw-4jQ"/>
+                                    <constraint firstAttribute="height" constant="36" type="user" id="yBO-yw-4jQ"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
                                 <state key="normal" title="Search">
@@ -439,14 +439,15 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="oGA-cx-38p" firstAttribute="top" secondItem="kZj-gL-nXP" secondAttribute="top" type="default" id="EbE-5V-nAC"/>
+                            <constraint firstItem="Tnc-E3-V2P" firstAttribute="top" secondItem="kZj-gL-nXP" secondAttribute="top" constant="32" type="user" id="4X8-mW-Qfx"/>
+                            <constraint firstItem="oGA-cx-38p" firstAttribute="top" secondItem="kZj-gL-nXP" secondAttribute="top" type="user" id="EbE-5V-nAC"/>
                             <constraint firstItem="xtK-ZJ-tNU" firstAttribute="leading" secondItem="kZj-gL-nXP" secondAttribute="leading" type="default" id="N6d-3h-b4v"/>
-                            <constraint firstItem="xtK-ZJ-tNU" firstAttribute="bottom" secondItem="kZj-gL-nXP" secondAttribute="bottom" type="default" id="Ubn-JL-1Fk"/>
+                            <constraint firstItem="Tnc-E3-V2P" firstAttribute="top" secondItem="oGA-cx-38p" secondAttribute="bottom" type="user" id="T7v-A6-R7Z"/>
+                            <constraint firstItem="xtK-ZJ-tNU" firstAttribute="top" secondItem="Tnc-E3-V2P" secondAttribute="bottom" type="user" id="Uei-r4-t70"/>
                             <constraint firstItem="Tnc-E3-V2P" firstAttribute="trailing" secondItem="kZj-gL-nXP" secondAttribute="trailing" type="default" id="c7e-2N-JXa"/>
                             <constraint firstItem="oGA-cx-38p" firstAttribute="leading" secondItem="kZj-gL-nXP" secondAttribute="leading" type="default" id="hh4-0X-H8z"/>
                             <constraint firstItem="oGA-cx-38p" firstAttribute="trailing" secondItem="kZj-gL-nXP" secondAttribute="trailing" type="default" id="lRW-jF-Ega"/>
                             <constraint firstItem="xtK-ZJ-tNU" firstAttribute="trailing" secondItem="kZj-gL-nXP" secondAttribute="trailing" type="default" id="lxq-im-7To"/>
-                            <constraint firstItem="Tnc-E3-V2P" firstAttribute="top" secondItem="kZj-gL-nXP" secondAttribute="top" constant="30" id="tvl-5i-Dva"/>
                             <constraint firstItem="Tnc-E3-V2P" firstAttribute="leading" secondItem="kZj-gL-nXP" secondAttribute="leading" type="default" id="wGF-eQ-efT"/>
                         </constraints>
                     </view>
@@ -497,6 +498,7 @@
         <class className="SEARSCatalogueViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/SEARSCatalogueViewController.h"/>
             <relationships>
+                <relationship kind="action" name="searchButtonPressed:"/>
                 <relationship kind="outlet" name="keywordTextField" candidateClass="UITextField"/>
                 <relationship kind="outlet" name="productTableView" candidateClass="UITableView"/>
                 <relationship kind="outlet" name="searchButton" candidateClass="UIButton"/>
@@ -520,6 +522,8 @@
         <class className="SEARSDetailViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/SEARSDetailViewController.h"/>
             <relationships>
+                <relationship kind="action" name="handleCommit:"/>
+                <relationship kind="action" name="handleLike:"/>
                 <relationship kind="outlet" name="addDetailButton" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="commitLabel" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="contentScrollView" candidateClass="UIScrollView"/>
@@ -533,6 +537,7 @@
         <class className="SEARSPostViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/SEARSPostViewController.h"/>
             <relationships>
+                <relationship kind="action" name="handlePost:"/>
                 <relationship kind="outlet" name="postImageView" candidateClass="UIImageView"/>
                 <relationship kind="outlet" name="titleText" candidateClass="UITextField"/>
             </relationships>
@@ -558,6 +563,9 @@
         </class>
         <class className="UICollectionViewFlowLayout" superclassName="UICollectionViewLayout">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/UICollectionViewFlowLayout.h"/>
+        </class>
+        <class className="UICollectionViewLayout" superclassName="NSObject">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/UICollectionViewLayout.h"/>
         </class>
     </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">

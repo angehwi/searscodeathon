@@ -37,6 +37,7 @@
 		915CD96217C95FB9001AB978 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 915CD96117C95FB9001AB978 /* Security.framework */; };
 		915CD96417C95FC2001AB978 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 915CD96317C95FC2001AB978 /* SystemConfiguration.framework */; };
 		916E678A17C94DC0005E890B /* SEARSViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 916E678917C94DC0005E890B /* SEARSViewController.m */; };
+		91F9CF4417CAB8FC005CC3F3 /* sears_logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 91F9CF4317CAB8FC005CC3F3 /* sears_logo.png */; };
 		E51C9BBA17CA765D004A956F /* ApigeeiOSSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E51C9BB917CA765D004A956F /* ApigeeiOSSDK.framework */; };
 		E557016417CA0FD600DCC8F3 /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E557016317CA0FD600DCC8F3 /* ImageIO.framework */; };
 		E557016A17CA106D00DCC8F3 /* SEARSCatalogueViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E557016717CA106D00DCC8F3 /* SEARSCatalogueViewController.m */; };
@@ -87,6 +88,7 @@
 		915CD96317C95FC2001AB978 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		916E678817C94DC0005E890B /* SEARSViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SEARSViewController.h; sourceTree = "<group>"; };
 		916E678917C94DC0005E890B /* SEARSViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SEARSViewController.m; sourceTree = "<group>"; };
+		91F9CF4317CAB8FC005CC3F3 /* sears_logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sears_logo.png; sourceTree = "<group>"; };
 		E51C9BB917CA765D004A956F /* ApigeeiOSSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ApigeeiOSSDK.framework; sourceTree = "<group>"; };
 		E557016317CA0FD600DCC8F3 /* ImageIO.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ImageIO.framework; path = System/Library/Frameworks/ImageIO.framework; sourceTree = SDKROOT; };
 		E557016617CA106D00DCC8F3 /* SEARSCatalogueViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SEARSCatalogueViewController.h; sourceTree = "<group>"; };
@@ -123,6 +125,7 @@
 		9126F9F917C94CF000CF4F25 = {
 			isa = PBXGroup;
 			children = (
+				91F9CF4317CAB8FC005CC3F3 /* sears_logo.png */,
 				E557016317CA0FD600DCC8F3 /* ImageIO.framework */,
 				9126FA0D17C94CF000CF4F25 /* Sears */,
 				9126FA0417C94CF000CF4F25 /* Frameworks */,
@@ -294,7 +297,7 @@
 				LastUpgradeCheck = 0460;
 				ORGANIZATIONNAME = SEARS;
 			};
-			buildConfigurationList = 9126F9FD17C94CF000CF4F25 /* Build configuration list for PBXProject "sears" */;
+			buildConfigurationList = 9126F9FD17C94CF000CF4F25 /* Build configuration list for PBXProject "Sears" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -328,6 +331,7 @@
 				9140FDD217CA03C600E75828 /* medal_3.png in Resources */,
 				9140FDD317CA03C600E75828 /* medal_4.png in Resources */,
 				9140FDD417CA03C600E75828 /* medal_5.png in Resources */,
+				91F9CF4417CAB8FC005CC3F3 /* sears_logo.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -469,7 +473,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		9126F9FD17C94CF000CF4F25 /* Build configuration list for PBXProject "sears" */ = {
+		9126F9FD17C94CF000CF4F25 /* Build configuration list for PBXProject "Sears" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				9126FA2217C94CF000CF4F25 /* Debug */,
