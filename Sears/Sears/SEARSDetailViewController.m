@@ -49,6 +49,8 @@
 
 -(void)viewWillAppear:(BOOL)animated{
     self.dict =  [httpModel getProductWithProductID:[self.dict objectForKey:@"prod_id"]];
+    self.likeLabel.text = [self.dict objectForKey:@"num_like"];
+    self.commitLabel.text = [self.dict objectForKey:@"meta1"];
     if([@"" isEqualToString:[self.dict objectForKey:@"sears_id"]]){
         NSLog(@"Detail Infomation");
 //        [self.detailInfoView setAlpha:0.0];
@@ -60,8 +62,7 @@
 -(void)showDetailInfos{
 //    [self.likeButton.titleLabel setFrame:CGRectMake(5, self.likeButton.titleLabel.frame.origin.y, 150, self.likeButton.titleLabel.frame.size.height)];
 
-    self.likeLabel.text = [self.dict objectForKey:@"num_like"];
-    self.commitLabel.text = [self.dict objectForKey:@"meta1"];
+
 
     
     NSString *titleString =[self.dict objectForKey:@"title"];
