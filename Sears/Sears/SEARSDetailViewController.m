@@ -61,6 +61,7 @@
 //    [self.likeButton.titleLabel setFrame:CGRectMake(5, self.likeButton.titleLabel.frame.origin.y, 150, self.likeButton.titleLabel.frame.size.height)];
 
     self.likeLabel.text = [self.dict objectForKey:@"num_like"];
+    self.commitLabel.text = [self.dict objectForKey:@"meta1"];
 
     
     NSString *titleString =[self.dict objectForKey:@"title"];
@@ -118,6 +119,7 @@
     [self.detailInfoView setAlpha:1.0];
 }
 
+
 -(void) discountButtonClicked{
     NSMutableString *priceString = [[NSMutableString alloc] initWithFormat:@"%@",[self.dict objectForKey:@"price"]];
     [priceString insertString:@"." atIndex:[priceString length]-2];
@@ -147,6 +149,15 @@
         SEARSCatalogueViewController *catalogueVC = (SEARSCatalogueViewController *)segue.destinationViewController;
         catalogueVC.delegate = self;
     }
+}
+- (IBAction)handleCommit:(id)sender {
+    NSLog(@"handleCommit");
+    [httpModel commitWithProductID:[self.dict objectForKey:@"prod_id"]];
+//    NSLog(@"Before: %@", self.dict);
+    self.dict =  [httpModel getProductWithProductID:[self.dict objectForKey:@"prod_id"]];
+//    NSLog(@"After: %@", self.dict);
+    self.commitLabel.text = [self.dict objectForKey:@"meta1"];
+
 }
 - (IBAction)handleLike:(id)sender {
     NSLog(@"handleLike");
