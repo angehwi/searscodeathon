@@ -7,7 +7,20 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "SEARSCatalogueViewController.h"
 
-@interface SEARSDetailViewController : UIViewController
+@interface SEARSDetailViewController : UIViewController <SEARSCatalogueViewControllerDelegate>
+
+@property (nonatomic, retain) NSDictionary *dict;
+@property (weak, nonatomic) IBOutlet UIImageView *photoView;
+@property (weak, nonatomic) IBOutlet UIView *detailInfoView;
+@property (strong, nonatomic) IBOutlet UIScrollView *contentScrollView;
+@property (weak, nonatomic) IBOutlet UIButton *addDetailButton;
+@property (weak, nonatomic) IBOutlet UILabel *productName;
+@property (weak, nonatomic) IBOutlet UILabel *likeDate;
+@property (weak, nonatomic) IBOutlet UILabel *productPrice;
+@property (weak, nonatomic) IBOutlet UILabel *store;
+
+-(void) addDetailInformation:(NSDictionary *)info;
 
 @end

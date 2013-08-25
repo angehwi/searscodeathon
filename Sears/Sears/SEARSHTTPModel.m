@@ -65,7 +65,7 @@ static SEARSHTTPModel *instance;
 
     NSString *jsonString = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
 
-    jsonString = [jsonString substringFromIndex:5];
+    //jsonString = [jsonString substringFromIndex:5];
 //    NSLog(@"JSonString: %@", jsonString);
     NSArray *dictionary = [jsonString objectFromJSONString];
 
@@ -80,6 +80,20 @@ static SEARSHTTPModel *instance;
     NSDictionary *ret= [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:&error];
     
     return ret;
+}
+
+- (NSDictionary *)getProductsWithKeyword:(NSString *)keyword{
+    NSLog(@"getProductWithKeyword");
+    
+    NSString *urlString = [NSString stringWithFormat:@"http://api.developer.sears.com/v2.1/products/search/Sears/json/keyword/%@?apikey=fMhZALfk7X96r8oas9AUr1l52tVyctyg", keyword];
+    
+    urlString = [urlString stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+    NSURL *url = [NSURL URLWithString:urlString];
+    NSData *data= [NSData dataWithContentsOfURL:url];
+    
+    NSDictionary *result = [self parseJSONtoDictionary:data];
+    NSLog(@"%@", result);
+    return result;
 }
 
 

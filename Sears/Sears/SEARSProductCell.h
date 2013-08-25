@@ -9,5 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface SEARSProductCell : UITableViewCell
+@property (weak, nonatomic) IBOutlet UIImageView *productImage;
+@property (weak, nonatomic) IBOutlet UILabel *productName;
 
 @end

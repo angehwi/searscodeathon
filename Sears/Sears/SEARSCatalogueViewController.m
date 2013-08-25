@@ -7,8 +7,14 @@
 //
 
 #import "SEARSCatalogueViewController.h"
+#import "SEARSHTTPModel.h"
+#import "SEARSProductCell.h"
+#import <SDWebImage/UIImageView+WebCache.h>
 
-@interface SEARSCatalogueViewController ()
+
+@interface SEARSCatalogueViewController () <UITableViewDelegate, UITableViewDataSource> {
+    NSMutableArray *products;
+}
 
 @end
 
@@ -26,7 +32,10 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view.
+    SEARSHTTPModel *httpModel = [SEARSHTTPModel sharedHTTPModel];
+    NSDictionary *searchResults = [httpModel getProductsWithKeyword:@"hello"];
+    products = [[searchResults objectForKey:@"SearchResults"] objectForKey:@"Products"];
+    [self.productTableView reloadData];
 }
 
 - (void)didReceiveMemoryWarning
@@ -34,5 +43,37 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+    return products.count;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+    SEARSProductCell *cell = [tableView dequeueReusableCellWithIdentifier:@"ProductCell"];
+    
+    NSDictionary *productDict = [products objectAtIndex:indexPath.row];
+ 
+    NSString *imageUrl = [[productDict objectForKey:@"Description"] objectForKey:@"ImageURL"];
+    NSString *name = [[productDict objectForKey:@"Description"] objectForKey:@"Name"];
+    NSNumber *price = [[productDict objectForKey:@"Price"] objectForKey:@"DisplayPrice"];
+    
+    // Here we use the new provided setImageWithURL: method to load the web image
+    [cell.productImage setImageWithURL:[NSURL URLWithString: imageUrl]];
+    
+    cell.productName.text = name;
+    
+    return cell;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    NSDictionary *productDict = [products objectAtIndex:indexPath.row];
+    [_delegate addDetailInformation:productDict];
+    [[self navigationController] popViewControllerAnimated:NO];
+}
+
+
+
+
+
 
 @end

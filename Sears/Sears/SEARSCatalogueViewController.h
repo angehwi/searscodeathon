@@ -8,6 +8,16 @@
 
 #import <UIKit/UIKit.h>
 
-@interface SEARSCatalogueViewController : UIViewController
+@protocol SEARSCatalogueViewControllerDelegate <NSObject>
+@optional
+-(void) addDetailInformation:(NSDictionary *)info;
+@end
+
+@interface SEARSCatalogueViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>{
+}
+@property (weak, nonatomic) IBOutlet UITableView *productTableView;
+@property (nonatomic, retain) id<SEARSCatalogueViewControllerDelegate> delegate;
 
 @end
+
+

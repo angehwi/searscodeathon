@@ -8,6 +8,7 @@
 
 #import "SEARSViewController.h"
 #import "SEARSCollectionViewController.h"
+#import "SEARSDetailViewController.h"
 
 @interface SEARSViewController ()
 @property (weak, nonatomic) IBOutlet UIView *collectionViewContainer;
@@ -48,6 +49,23 @@
 //    
 //    [mainCollectionViewController didMoveToParentViewController:self];
 }
+
+
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+    //    NSLog(@"prepareForSegue");
+    if([@"DETAIL_SEGUE" isEqualToString:segue.identifier]){
+//        if(isMenuViewOpened){
+//            [self animateNavigationBarForSegue];
+//            isMenuViewOpened = !isMenuViewOpened;
+//        }
+        SEARSDetailViewController *detailVC = (SEARSDetailViewController *)segue.destinationViewController;
+        // TODO: Send dictionary to DetailView
+//        EDRecipeCell *selectedCell = (EDRecipeCell*)sender;
+//        
+//        detailVC.recipe_seq = selectedCell.seq;
+    }
+}
+
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
