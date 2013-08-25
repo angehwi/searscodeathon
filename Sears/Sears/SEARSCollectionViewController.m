@@ -16,10 +16,16 @@
 @implementation SEARSCollectionViewController{
     NSArray *listArray;
     SEARSHTTPModel *httpModel;
+    NSOperationQueue *photoQueue;
 }
 
 
-
+-(void)viewWillAppear:(BOOL)animated{
+    NSLog(@"ViewWillAppear");
+    
+    listArray = [httpModel getList:@"like"];
+    [self.collectionView reloadData];
+}
 
 -(NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView{
     NSLog(@"numberOfSectionsInCollectionView");
@@ -34,8 +40,20 @@
     SEARSCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"PHOTO_CELL" forIndexPath:indexPath];
     
     NSDictionary *cellDictionary = [listArray objectAtIndex:indexPath.row];
+    
     cell.createdDate.text  = [cellDictionary objectForKey:@"create_date"];
     
+    [photoQueue addOperationWithBlock:^{
+        NSString *photoID = [cellDictionary objectForKey:@"prod_id"];
+        NSString *photoURLString = [NSString stringWithFormat: @"http://talkloud.com/_sears/uploads/photo_%@.jpg", photoID];
+        NSURL *photoURL = [NSURL URLWithString:photoURLString];
+        NSData *photoData = [NSData dataWithContentsOfURL:photoURL];
+        UIImage *photoImage = [UIImage imageWithData:photoData];
+        cell.productPhoto.image = photoImage;
+        [cell.productPhoto setContentMode:UIViewContentModeScaleAspectFit];
+
+    }];
+//    http://talkloud.com/_sears/uploads/photo_1.jpg.
     return cell;
 }
 
@@ -55,10 +73,10 @@
 	// Do any additional setup after loading the view.
     httpModel = [SEARSHTTPModel sharedHTTPModel];
 //    listDictionary = [[NSDictionary alloc] initWithDictionary:[httpModel getList:@"like"] copyItems:YES];
-    listArray = [httpModel getList:@"like"];
+
     
     self.collectionView.dataSource = self;
-    
+    photoQueue = [NSOperationQueue new];
 
 }
 

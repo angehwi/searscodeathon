@@ -11,4 +11,5 @@
 @interface SEARSHTTPModel : UICollectionViewCell
 +(SEARSHTTPModel *)sharedHTTPModel;
 -(NSArray *)getList:(NSString *)order;
+-(void)postPhoto:(UIImage *)image;
 @end
