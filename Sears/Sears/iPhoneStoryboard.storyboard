@@ -389,26 +389,41 @@
                                     <outlet property="delegate" destination="K0r-eu-Yup" id="ujY-gE-6op"/>
                                 </connections>
                             </tableView>
-                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="jNQ-jO-IiA">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Type a keyword" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="oGA-cx-38p">
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tnc-E3-V2P">
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="Search">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
                                 <connections>
-                                    <outlet property="delegate" destination="K0r-eu-Yup" id="UJL-E5-XPo"/>
+                                    <action selector="searchButtonPressed:" destination="K0r-eu-Yup" eventType="touchUpInside" id="9LW-jK-gmn"/>
                                 </connections>
-                            </searchBar>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="xtK-ZJ-tNU" firstAttribute="top" secondItem="jNQ-jO-IiA" secondAttribute="bottom" type="default" id="5Ad-lF-bpW"/>
-                            <constraint firstItem="jNQ-jO-IiA" firstAttribute="top" secondItem="kZj-gL-nXP" secondAttribute="top" type="default" id="A1L-pt-q7V"/>
-                            <constraint firstItem="jNQ-jO-IiA" firstAttribute="leading" secondItem="kZj-gL-nXP" secondAttribute="leading" type="default" id="H3B-Ad-EJL"/>
-                            <constraint firstItem="jNQ-jO-IiA" firstAttribute="trailing" secondItem="kZj-gL-nXP" secondAttribute="trailing" type="default" id="MMi-ib-iib"/>
+                            <constraint firstItem="Tnc-E3-V2P" firstAttribute="leading" secondItem="kZj-gL-nXP" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="CU5-Pc-PLa"/>
+                            <constraint firstItem="oGA-cx-38p" firstAttribute="top" secondItem="kZj-gL-nXP" secondAttribute="top" type="default" id="EbE-5V-nAC"/>
+                            <constraint firstItem="Tnc-E3-V2P" firstAttribute="top" secondItem="oGA-cx-38p" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="K7m-pC-T4X"/>
                             <constraint firstItem="xtK-ZJ-tNU" firstAttribute="leading" secondItem="kZj-gL-nXP" secondAttribute="leading" type="default" id="N6d-3h-b4v"/>
+                            <constraint firstItem="xtK-ZJ-tNU" firstAttribute="top" secondItem="Tnc-E3-V2P" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="OhV-ct-7Ik"/>
+                            <constraint firstItem="oGA-cx-38p" firstAttribute="leading" secondItem="kZj-gL-nXP" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="QZT-HW-iGW"/>
                             <constraint firstItem="xtK-ZJ-tNU" firstAttribute="bottom" secondItem="kZj-gL-nXP" secondAttribute="bottom" type="default" id="Ubn-JL-1Fk"/>
+                            <constraint firstAttribute="trailing" secondItem="Tnc-E3-V2P" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="aM1-9x-IoC"/>
+                            <constraint firstAttribute="trailing" secondItem="oGA-cx-38p" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="eQk-QQ-GbE"/>
                             <constraint firstItem="xtK-ZJ-tNU" firstAttribute="trailing" secondItem="kZj-gL-nXP" secondAttribute="trailing" type="default" id="lxq-im-7To"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="eGg-rJ-dAn"/>
                     <connections>
+                        <outlet property="keywordTextField" destination="oGA-cx-38p" id="IwG-F2-JGl"/>
                         <outlet property="productTableView" destination="xtK-ZJ-tNU" id="xcx-oD-lgB"/>
                         <outlet property="searchDisplayController" destination="nW6-sc-WF9" id="Kbt-Pr-Rit"/>
                     </connections>
@@ -433,7 +448,6 @@
                 <searchDisplayController id="nW6-sc-WF9">
                     <connections>
                         <outlet property="delegate" destination="K0r-eu-Yup" id="IkX-by-KCx"/>
-                        <outlet property="searchBar" destination="jNQ-jO-IiA" id="poP-PU-SFJ"/>
                         <outlet property="searchContentsController" destination="K0r-eu-Yup" id="c2v-Ck-N3X"/>
                         <outlet property="searchResultsDataSource" destination="K0r-eu-Yup" id="ISe-Qb-ss8"/>
                         <outlet property="searchResultsDelegate" destination="K0r-eu-Yup" id="LfO-3G-yXd"/>
@@ -447,6 +461,80 @@
         <image name="camera.png" width="30" height="30"/>
         <image name="heart.png" width="80" height="69"/>
     </resources>
+    <classes>
+        <class className="NSLayoutConstraint" superclassName="NSObject">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
+        </class>
+        <class className="SEARSCatalogueViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/SEARSCatalogueViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="searchButtonPressed:"/>
+                <relationship kind="outlet" name="keywordTextField" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="productTableView" candidateClass="UITableView"/>
+                <relationship kind="outlet" name="searchButton" candidateClass="UIButton"/>
+            </relationships>
+        </class>
+        <class className="SEARSCollectionViewCell" superclassName="UICollectionViewCell">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/SEARSCollectionViewCell.h"/>
+            <relationships>
+                <relationship kind="outlet" name="heart" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="likesLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="productPhoto" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="store_name" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+        <class className="SEARSCollectionViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/SEARSCollectionViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="collectionView" candidateClass="UICollectionView"/>
+            </relationships>
+        </class>
+        <class className="SEARSDetailViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/SEARSDetailViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="addDetailButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="contentScrollView" candidateClass="UIScrollView"/>
+                <relationship kind="outlet" name="detailInfoView" candidateClass="UIView"/>
+                <relationship kind="outlet" name="likeDate" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="photoView" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="productName" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="productPrice" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="store" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+        <class className="SEARSPostViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/SEARSPostViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="postImageView" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="titleText" candidateClass="UITextField"/>
+            </relationships>
+        </class>
+        <class className="SEARSProductCell" superclassName="UITableViewCell">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/SEARSProductCell.h"/>
+            <relationships>
+                <relationship kind="outlet" name="productImage" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="productName" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+        <class className="SEARSViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/SEARSViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="collectionViewContainer" candidateClass="UIView"/>
+            </relationships>
+        </class>
+        <class className="UICollectionReusableView" superclassName="UIView">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/UICollectionReusableView.h"/>
+        </class>
+        <class className="UICollectionViewCell" superclassName="UICollectionReusableView">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/UICollectionViewCell.h"/>
+        </class>
+        <class className="UICollectionViewFlowLayout" superclassName="UICollectionViewLayout">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/UICollectionViewFlowLayout.h"/>
+        </class>
+        <class className="UICollectionViewLayout" superclassName="NSObject">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/UICollectionViewLayout.h"/>
+        </class>
+    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

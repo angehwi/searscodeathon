@@ -17,6 +17,8 @@
 }
 @property (weak, nonatomic) IBOutlet UITableView *productTableView;
 @property (nonatomic, retain) id<SEARSCatalogueViewControllerDelegate> delegate;
+@property (weak, nonatomic) IBOutlet UITextField *keywordTextField;
+@property (weak, nonatomic) IBOutlet UIButton *searchButton;
 
 @end
 

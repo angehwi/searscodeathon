@@ -14,6 +14,7 @@
 
 @interface SEARSCatalogueViewController () <UITableViewDelegate, UITableViewDataSource> {
     NSMutableArray *products;
+    SEARSHTTPModel *httpModel;
 }
 
 @end
@@ -32,10 +33,8 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    SEARSHTTPModel *httpModel = [SEARSHTTPModel sharedHTTPModel];
-    NSDictionary *searchResults = [httpModel getProductsWithKeyword:@"hello"];
-    products = [[searchResults objectForKey:@"SearchResults"] objectForKey:@"Products"];
-    [self.productTableView reloadData];
+    httpModel = [SEARSHTTPModel sharedHTTPModel];
+    [self.keywordTextField becomeFirstResponder];
 }
 
 - (void)didReceiveMemoryWarning
@@ -71,6 +70,13 @@
     [[self navigationController] popViewControllerAnimated:NO];
 }
 
+- (IBAction)searchButtonPressed:(id)sender {
+    NSDictionary *searchResults = [httpModel getProductsWithKeyword:self.keywordTextField.text];
+    products = [[searchResults objectForKey:@"SearchResults"] objectForKey:@"Products"];
+    [self.keywordTextField resignFirstResponder];
+    [self.productTableView reloadData];
+    
+}
 
 
 
