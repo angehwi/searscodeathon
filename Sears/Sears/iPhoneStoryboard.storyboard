@@ -189,6 +189,7 @@
                                             <outlet property="likesLabel" destination="TQl-g1-IEu" id="hZh-EO-gzH"/>
                                             <outlet property="productPhoto" destination="H2B-1I-72K" id="Tbx-Hq-8px"/>
                                             <outlet property="store_name" destination="hau-tv-A8D" id="IBc-88-m0C"/>
+                                            <segue destination="vpc-Kr-Hng" kind="push" id="a2c-bE-Gm0"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
@@ -210,6 +211,237 @@
             </objects>
             <point key="canvasLocation" x="993" y="-654"/>
         </scene>
+        <!--Detail View Controller-->
+        <scene sceneID="7oM-Ci-ebg">
+            <objects>
+                <viewController id="vpc-Kr-Hng" customClass="SEARSDetailViewController" sceneMemberID="viewController">
+                    <scrollView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" id="698-eI-cX8">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="416"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Hun-BS-sHy">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="320" id="h4P-Wu-UKO"/>
+                                    <constraint firstAttribute="width" constant="320" id="nos-pe-ZWc"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BFx-1A-j4R">
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="Add Detail Information">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="K0r-eu-Yup" kind="push" identifier="CATALOGUE_SEGUE" id="JQP-QP-XI7"/>
+                                </connections>
+                            </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6KV-mn-zJn">
+                                <subviews>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rKs-PP-ud2">
+                                        <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Price" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1FO-JO-seo">
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Date" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mLF-zM-SA2">
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Store" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="H6b-8H-w5l">
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FDx-Sq-vzD">
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xmg-S7-LJf">
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Labelll" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1qi-IF-pc9">
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XNr-Wt-wGB">
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="128" id="6rT-mf-jNl"/>
+                                        </constraints>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="1qi-IF-pc9" firstAttribute="centerX" secondItem="H6b-8H-w5l" secondAttribute="centerX" type="default" id="0Db-Nh-Qcx"/>
+                                    <constraint firstItem="XNr-Wt-wGB" firstAttribute="leading" secondItem="6KV-mn-zJn" secondAttribute="leading" type="default" id="BEc-v9-dOF"/>
+                                    <constraint firstItem="XNr-Wt-wGB" firstAttribute="centerX" secondItem="Xmg-S7-LJf" secondAttribute="centerX" type="default" id="HjQ-Cu-frM"/>
+                                    <constraint firstItem="1FO-JO-seo" firstAttribute="baseline" secondItem="mLF-zM-SA2" secondAttribute="baseline" type="default" id="Mfy-em-cSe"/>
+                                    <constraint firstItem="rKs-PP-ud2" firstAttribute="top" secondItem="6KV-mn-zJn" secondAttribute="top" constant="20" symbolic="YES" type="default" id="T1i-zk-05O"/>
+                                    <constraint firstItem="1qi-IF-pc9" firstAttribute="baseline" secondItem="Xmg-S7-LJf" secondAttribute="baseline" type="default" id="TV5-BK-MdS"/>
+                                    <constraint firstItem="FDx-Sq-vzD" firstAttribute="top" secondItem="6KV-mn-zJn" secondAttribute="top" constant="89" id="W0w-ST-ftO"/>
+                                    <constraint firstItem="FDx-Sq-vzD" firstAttribute="centerX" secondItem="mLF-zM-SA2" secondAttribute="centerX" type="default" id="aFU-3g-927"/>
+                                    <constraint firstAttribute="trailing" secondItem="1qi-IF-pc9" secondAttribute="trailing" constant="18" id="cqL-JY-skK"/>
+                                    <constraint firstItem="mLF-zM-SA2" firstAttribute="leading" secondItem="6KV-mn-zJn" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="kpY-Fv-qex"/>
+                                    <constraint firstAttribute="height" constant="239" id="szN-gH-dJg"/>
+                                    <constraint firstItem="Xmg-S7-LJf" firstAttribute="baseline" secondItem="FDx-Sq-vzD" secondAttribute="baseline" type="default" id="uFD-rM-gIN"/>
+                                    <constraint firstItem="1FO-JO-seo" firstAttribute="baseline" secondItem="H6b-8H-w5l" secondAttribute="baseline" type="default" id="uTw-aJ-B5d"/>
+                                    <constraint firstItem="mLF-zM-SA2" firstAttribute="top" secondItem="6KV-mn-zJn" secondAttribute="top" constant="64" id="xEW-4d-f3t"/>
+                                    <constraint firstItem="XNr-Wt-wGB" firstAttribute="top" secondItem="6KV-mn-zJn" secondAttribute="top" constant="125" id="yQU-X5-TyQ"/>
+                                    <constraint firstItem="rKs-PP-ud2" firstAttribute="leading" secondItem="FDx-Sq-vzD" secondAttribute="leading" type="default" id="ykp-D6-fXU"/>
+                                    <constraint firstItem="1FO-JO-seo" firstAttribute="centerX" secondItem="Xmg-S7-LJf" secondAttribute="centerX" type="default" id="yye-KH-NVL"/>
+                                    <constraint firstItem="XNr-Wt-wGB" firstAttribute="trailing" secondItem="6KV-mn-zJn" secondAttribute="trailing" type="default" id="zxD-RQ-76e"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="Hun-BS-sHy" firstAttribute="leading" secondItem="698-eI-cX8" secondAttribute="leading" constant="-1" id="9Yb-GL-6UJ"/>
+                            <constraint firstItem="BFx-1A-j4R" firstAttribute="top" secondItem="Hun-BS-sHy" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="ITK-M3-7BD"/>
+                            <constraint firstItem="BFx-1A-j4R" firstAttribute="leading" secondItem="698-eI-cX8" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="QL4-Gx-1N3"/>
+                            <constraint firstItem="Hun-BS-sHy" firstAttribute="top" secondItem="698-eI-cX8" secondAttribute="top" type="default" id="Ukb-cG-gAf"/>
+                            <constraint firstItem="6KV-mn-zJn" firstAttribute="top" secondItem="BFx-1A-j4R" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="azy-5O-fGA"/>
+                            <constraint firstAttribute="bottom" secondItem="BFx-1A-j4R" secondAttribute="bottom" constant="45" id="c8c-Mb-SU0"/>
+                            <constraint firstItem="6KV-mn-zJn" firstAttribute="trailing" secondItem="698-eI-cX8" secondAttribute="trailing" type="default" id="nyy-uK-tbs"/>
+                            <constraint firstAttribute="trailing" secondItem="BFx-1A-j4R" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="pg0-Ay-gqV"/>
+                            <constraint firstItem="6KV-mn-zJn" firstAttribute="leading" secondItem="698-eI-cX8" secondAttribute="leading" type="default" id="rpV-D1-Ozh"/>
+                            <constraint firstItem="BFx-1A-j4R" firstAttribute="centerX" secondItem="698-eI-cX8" secondAttribute="centerX" type="default" id="wRw-2k-R7O"/>
+                        </constraints>
+                        <connections>
+                            <outlet property="delegate" destination="vpc-Kr-Hng" id="SR1-vW-2uR"/>
+                        </connections>
+                    </scrollView>
+                    <navigationItem key="navigationItem" id="KLH-7D-jAM"/>
+                    <connections>
+                        <outlet property="addDetailButton" destination="BFx-1A-j4R" id="TNU-NQ-y6t"/>
+                        <outlet property="contentScrollView" destination="698-eI-cX8" id="29w-4d-3hc"/>
+                        <outlet property="detailInfoView" destination="6KV-mn-zJn" id="0mw-CL-bu4"/>
+                        <outlet property="likeDate" destination="FDx-Sq-vzD" id="cwg-4F-Lel"/>
+                        <outlet property="photoView" destination="Hun-BS-sHy" id="Njb-hw-d2P"/>
+                        <outlet property="productName" destination="rKs-PP-ud2" id="Ck8-Oa-Vra"/>
+                        <outlet property="productPrice" destination="Xmg-S7-LJf" id="Qqs-T8-aFu"/>
+                        <outlet property="store" destination="1qi-IF-pc9" id="zDG-Qa-p8o"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vOe-Mw-g2s" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1470" y="-654"/>
+        </scene>
+        <!--Catalogue View Controller-->
+        <scene sceneID="mzv-kP-sPh">
+            <objects>
+                <viewController id="K0r-eu-Yup" customClass="SEARSCatalogueViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="kZj-gL-nXP">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="416"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="xtK-ZJ-tNU">
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="ProductCell" id="iSl-sD-56d" customClass="SEARSProductCell">
+                                        <rect key="frame" x="0.0" y="22" width="320" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="300" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" translatesAutoresizingMaskIntoConstraints="NO" id="6bO-Jn-oUM">
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="43" id="7ds-KF-2ce"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GXd-6q-E6C">
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="33" id="119-uz-e2s"/>
+                                                        <constraint firstAttribute="width" constant="269" id="CLM-9X-vSe"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                </label>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                        <constraints>
+                                            <constraint firstItem="6bO-Jn-oUM" firstAttribute="top" secondItem="iSl-sD-56d" secondAttribute="top" type="default" id="JJl-xJ-dAz"/>
+                                            <constraint firstItem="GXd-6q-E6C" firstAttribute="centerY" secondItem="6bO-Jn-oUM" secondAttribute="centerY" type="default" id="OWv-5P-DdY"/>
+                                            <constraint firstItem="GXd-6q-E6C" firstAttribute="leading" secondItem="iSl-sD-56d" secondAttribute="leading" constant="51" id="aSc-xl-6pL"/>
+                                            <constraint firstItem="6bO-Jn-oUM" firstAttribute="leading" secondItem="iSl-sD-56d" secondAttribute="leading" type="default" id="bCQ-SR-TeY"/>
+                                            <constraint firstItem="GXd-6q-E6C" firstAttribute="leading" secondItem="6bO-Jn-oUM" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="q0l-vs-yLl"/>
+                                        </constraints>
+                                        <connections>
+                                            <outlet property="productImage" destination="6bO-Jn-oUM" id="cA8-fe-4qG"/>
+                                            <outlet property="productName" destination="GXd-6q-E6C" id="d9e-mK-qXr"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="K0r-eu-Yup" id="NOI-cu-OXH"/>
+                                    <outlet property="delegate" destination="K0r-eu-Yup" id="ujY-gE-6op"/>
+                                </connections>
+                            </tableView>
+                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="jNQ-jO-IiA">
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="K0r-eu-Yup" id="UJL-E5-XPo"/>
+                                </connections>
+                            </searchBar>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="xtK-ZJ-tNU" firstAttribute="top" secondItem="jNQ-jO-IiA" secondAttribute="bottom" type="default" id="5Ad-lF-bpW"/>
+                            <constraint firstItem="jNQ-jO-IiA" firstAttribute="top" secondItem="kZj-gL-nXP" secondAttribute="top" type="default" id="A1L-pt-q7V"/>
+                            <constraint firstItem="jNQ-jO-IiA" firstAttribute="leading" secondItem="kZj-gL-nXP" secondAttribute="leading" type="default" id="H3B-Ad-EJL"/>
+                            <constraint firstItem="jNQ-jO-IiA" firstAttribute="trailing" secondItem="kZj-gL-nXP" secondAttribute="trailing" type="default" id="MMi-ib-iib"/>
+                            <constraint firstItem="xtK-ZJ-tNU" firstAttribute="leading" secondItem="kZj-gL-nXP" secondAttribute="leading" type="default" id="N6d-3h-b4v"/>
+                            <constraint firstItem="xtK-ZJ-tNU" firstAttribute="bottom" secondItem="kZj-gL-nXP" secondAttribute="bottom" type="default" id="Ubn-JL-1Fk"/>
+                            <constraint firstItem="xtK-ZJ-tNU" firstAttribute="trailing" secondItem="kZj-gL-nXP" secondAttribute="trailing" type="default" id="lxq-im-7To"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="eGg-rJ-dAn"/>
+                    <connections>
+                        <outlet property="productTableView" destination="xtK-ZJ-tNU" id="xcx-oD-lgB"/>
+                        <outlet property="searchDisplayController" destination="nW6-sc-WF9" id="Kbt-Pr-Rit"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1h4-zu-BnK" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <searchDisplayController id="3Id-0V-kCo">
+                    <connections>
+                        <outlet property="delegate" destination="K0r-eu-Yup" id="CLP-xI-A5T"/>
+                        <outlet property="searchContentsController" destination="K0r-eu-Yup" id="Mlf-2h-oVC"/>
+                        <outlet property="searchResultsDataSource" destination="K0r-eu-Yup" id="nDp-WV-XRY"/>
+                        <outlet property="searchResultsDelegate" destination="K0r-eu-Yup" id="abS-ZP-yBs"/>
+                    </connections>
+                </searchDisplayController>
+                <searchDisplayController id="dIf-jT-te8">
+                    <connections>
+                        <outlet property="delegate" destination="K0r-eu-Yup" id="zAT-y6-hy9"/>
+                        <outlet property="searchContentsController" destination="K0r-eu-Yup" id="7eh-38-iY5"/>
+                        <outlet property="searchResultsDataSource" destination="K0r-eu-Yup" id="U2F-dz-xw5"/>
+                        <outlet property="searchResultsDelegate" destination="K0r-eu-Yup" id="StD-OC-5XG"/>
+                    </connections>
+                </searchDisplayController>
+                <searchDisplayController id="nW6-sc-WF9">
+                    <connections>
+                        <outlet property="delegate" destination="K0r-eu-Yup" id="IkX-by-KCx"/>
+                        <outlet property="searchBar" destination="jNQ-jO-IiA" id="poP-PU-SFJ"/>
+                        <outlet property="searchContentsController" destination="K0r-eu-Yup" id="c2v-Ck-N3X"/>
+                        <outlet property="searchResultsDataSource" destination="K0r-eu-Yup" id="ISe-Qb-ss8"/>
+                        <outlet property="searchResultsDelegate" destination="K0r-eu-Yup" id="LfO-3G-yXd"/>
+                    </connections>
+                </searchDisplayController>
+            </objects>
+            <point key="canvasLocation" x="1948" y="-654"/>
+        </scene>
     </scenes>
     <resources>
         <image name="camera.png" width="30" height="30"/>
@@ -218,6 +450,12 @@
     <classes>
         <class className="NSLayoutConstraint" superclassName="NSObject">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
+        </class>
+        <class className="SEARSCatalogueViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/SEARSCatalogueViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="productTableView" candidateClass="UITableView"/>
+            </relationships>
         </class>
         <class className="SEARSCollectionViewCell" superclassName="UICollectionViewCell">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/SEARSCollectionViewCell.h"/>
@@ -234,12 +472,32 @@
                 <relationship kind="outlet" name="collectionView" candidateClass="UICollectionView"/>
             </relationships>
         </class>
+        <class className="SEARSDetailViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/SEARSDetailViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="addDetailButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="contentScrollView" candidateClass="UIScrollView"/>
+                <relationship kind="outlet" name="detailInfoView" candidateClass="UIView"/>
+                <relationship kind="outlet" name="likeDate" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="photoView" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="productName" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="productPrice" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="store" candidateClass="UILabel"/>
+            </relationships>
+        </class>
         <class className="SEARSPostViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/SEARSPostViewController.h"/>
             <relationships>
                 <relationship kind="action" name="handlePost:"/>
                 <relationship kind="outlet" name="postImageView" candidateClass="UIImageView"/>
                 <relationship kind="outlet" name="titleText" candidateClass="UITextField"/>
+            </relationships>
+        </class>
+        <class className="SEARSProductCell" superclassName="UITableViewCell">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/SEARSProductCell.h"/>
+            <relationships>
+                <relationship kind="outlet" name="productImage" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="productName" candidateClass="UILabel"/>
             </relationships>
         </class>
         <class className="SEARSViewController" superclassName="UIViewController">

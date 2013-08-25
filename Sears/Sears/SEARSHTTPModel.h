@@ -12,4 +12,6 @@
 +(SEARSHTTPModel *)sharedHTTPModel;
 -(NSArray *)getList:(NSString *)order;
 -(void)postPhoto:(UIImage *)image;
+- (NSDictionary *)getProductsWithKeyword:(NSString *)keyword;
+
 @end

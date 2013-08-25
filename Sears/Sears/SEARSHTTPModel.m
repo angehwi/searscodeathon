@@ -211,5 +211,17 @@ static SEARSHTTPModel *instance;
     // Drawing code
 }
 */
-
+- (NSDictionary *)getProductsWithKeyword:(NSString *)keyword{
+    NSLog(@"getProductWithKeyword");
+    
+    NSString *urlString = [NSString stringWithFormat:@"http://api.developer.sears.com/v2.1/products/search/Sears/json/keyword/%@?apikey=fMhZALfk7X96r8oas9AUr1l52tVyctyg", keyword];
+    
+    urlString = [urlString stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+    NSURL *url = [NSURL URLWithString:urlString];
+    NSData *data= [NSData dataWithContentsOfURL:url];
+    
+    NSDictionary *result = [self parseJSONtoDictionary:data];
+    NSLog(@"%@", result);
+    return result;
+}
 @end
