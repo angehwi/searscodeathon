@@ -11,7 +11,10 @@
 #import "SEARSHTTPModel.h"
 #import <SDWebImage/UIImageView+WebCache.h>
 
-@interface SEARSDetailViewController () <UIScrollViewDelegate>
+@interface SEARSDetailViewController () <UIScrollViewDelegate>{
+    UILabel *productPrice;
+    UITextField *cutPriceTextField ;
+}
 
 @end
 
@@ -74,22 +77,61 @@
     [self.searsPhotoView setImageWithURL:searsPhotoURL];
     [self.searsPhotoView setContentMode:UIViewContentModeScaleAspectFit];
 
-    UILabel *productPrice =[[UILabel alloc]initWithFrame:CGRectMake(5,75, 300, 20)];
+    productPrice =[[UILabel alloc]initWithFrame:CGRectMake(5,75, 300, 20)];
     NSMutableString *priceString = [[NSMutableString alloc] initWithFormat:@"%@",[self.dict objectForKey:@"price"]];
     [priceString insertString:@"." atIndex:[priceString length]-2];
     productPrice.text  = [NSString stringWithFormat:@"Price: $ %@", priceString];
     [self.detailInfoView addSubview:productPrice];
+    
+    // TODO: 할인 적용하기 .
+    NSNumber *newPrice = [self.dict objectForKey:@"new_price"];
+    if (newPrice.integerValue == 0){
+        
+    } else {
+        
+    }
+    
+    UILabel *cutPrice =[[UILabel alloc]initWithFrame:CGRectMake(5 ,100, 100, 20)];
+    cutPrice.text = @"Discount: $";
+    [self.detailInfoView addSubview:cutPrice];
+    
+    cutPriceTextField = [[UITextField alloc]initWithFrame:CGRectMake(100, 100, 100, 20)];
+    [cutPriceTextField setKeyboardType:UIKeyboardTypeDecimalPad];
+    [self.detailInfoView addSubview:cutPriceTextField];
+    
+    UIButton *cutPriceButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+    cutPriceButton.frame = CGRectMake(200 ,100, 50, 20);
+    [cutPriceButton setTitle:@"Apply!" forState:UIControlStateNormal];
+    // add targets and actions
+    [cutPriceButton addTarget:self action:@selector(discountButtonClicked) forControlEvents:UIControlEventTouchUpInside];
+    [self.detailInfoView addSubview:cutPriceButton];
+                                      
 
-    UILabel *store = [[UILabel alloc] initWithFrame:CGRectMake(5, 100, 300, 20)];
+    UILabel *store = [[UILabel alloc] initWithFrame:CGRectMake(5, 125, 300, 20)];
     store.text = [NSString stringWithFormat:@"Store: %@", [self.dict objectForKey:@"store_name"]];
     [self.detailInfoView addSubview:store];
 
-    UILabel *shipping = [[UILabel alloc] initWithFrame:CGRectMake(5, 125, 300, 20)];
+    UILabel *shipping = [[UILabel alloc] initWithFrame:CGRectMake(5, 150, 300, 20)];
     shipping.text = @"Shipping: Free shipping";
     [self.detailInfoView addSubview:shipping];
     
     [self.detailInfoView setAlpha:1.0];
 }
+
+-(void) discountButtonClicked{
+    NSMutableString *priceString = [[NSMutableString alloc] initWithFormat:@"%@",[self.dict objectForKey:@"price"]];
+    [priceString insertString:@"." atIndex:[priceString length]-2];
+    productPrice.text  = [NSString stringWithFormat:@"Price: $ %@ -> $ %@", priceString, cutPriceTextField.text];
+    productPrice.textColor = [UIColor redColor];
+    
+//    NSString *newPrice = cutPriceTextField.text;
+//    NSMutableDictionary *newDict = [NSMutableDictionary dictionaryWithDictionary:self.dict];
+//    [newDict setObject:newPrice forKey:@"new_price"];
+//    
+//    [httpModel updateProduct:self.dict];
+}
+
+
 -(void)viewDidLayoutSubviews{
     [self.contentScrollView setContentSize:CGSizeMake(self.view.frame.size.width, self.photoView.frame.size.height + self.addDetailButton.frame.size.height + self.detailInfoView.frame.size.height )];
 //    NSLog(@"ContentSize: %@", NSStringFromCGSize(self.contentScrollView.contentSize));    
