@@ -18,7 +18,6 @@
 @implementation SEARSCollectionViewController{
     NSArray *listArray;
     SEARSHTTPModel *httpModel;
-    NSOperationQueue *photoQueue;
 }
 
 
@@ -36,13 +35,9 @@
     [super viewDidLoad];
     NSLog(@"ViewDidLoad");
 	// Do any additional setup after loading the view.
-    httpModel = [SEARSHTTPModel sharedHTTPModel];
-    //    listDictionary = [[NSDictionary alloc] initWithDictionary:[httpModel getList:@"like"] copyItems:YES];
-    
+    httpModel = [SEARSHTTPModel sharedHTTPModel];   
     
     self.collectionView.dataSource = self;
-    photoQueue = [[NSOperationQueue alloc] init];
-//    photoQueue.MaxConcurrentOperationCount = NSOperationQueueDefaultMaxConcurrentOperationCount;
     [self collectionViewStyle];
     
 }
@@ -93,16 +88,10 @@
     SEARSCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"PHOTO_CELL" forIndexPath:indexPath];
     
     NSDictionary *cellDictionary = [listArray objectAtIndex:indexPath.row];
-    [photoQueue addOperationWithBlock:^{
-        NSString *photoID = [cellDictionary objectForKey:@"prod_id"];
-        NSString *photoURLString = [NSString stringWithFormat: @"http://talkloud.com/_sears/uploads/photo_%@.jpg", photoID];
-        NSURL *photoURL = [NSURL URLWithString:photoURLString];
-        NSData *photoData = [NSData dataWithContentsOfURL:photoURL];
-        UIImage *photoImage = [UIImage imageWithData:photoData];
-        cell.productPhoto.image = photoImage;
- 
-//        [cell.productPhoto setImageWithURL:[NSURL URLWithString: @"http://talkloud.com/_sears/uploads/photo_1.jpg"]];
-//
+    NSString *photoID = [cellDictionary objectForKey:@"prod_id"];
+    NSString *photoURLString = [NSString stringWithFormat: @"http://talkloud.com/_sears/uploads/photo_%@.jpg", photoID];
+
+    [cell.productPhoto setImageWithURL:[NSURL URLWithString:photoURLString] completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType) {
         [cell.productPhoto setContentMode:UIViewContentModeScaleAspectFit];
         
         cell.heart.hidden = NO;
@@ -120,7 +109,7 @@
             [cell addSubview:cell.medalImageView];
         }
     }];
-
+ 
     return cell;
 }
 
