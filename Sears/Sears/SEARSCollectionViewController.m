@@ -10,6 +10,7 @@
 #import "SEARSCollectionViewCell.h"
 #import "SEARSCollectionViewFlowLayout.h"
 #import "SEARSHTTPModel.h"
+#import <SDWebImage/UIImageView+WebCache.h>
 @interface SEARSCollectionViewController ()
 
 @end
@@ -99,6 +100,9 @@
         NSData *photoData = [NSData dataWithContentsOfURL:photoURL];
         UIImage *photoImage = [UIImage imageWithData:photoData];
         cell.productPhoto.image = photoImage;
+ 
+//        [cell.productPhoto setImageWithURL:[NSURL URLWithString: @"http://talkloud.com/_sears/uploads/photo_1.jpg"]];
+//
         [cell.productPhoto setContentMode:UIViewContentModeScaleAspectFit];
         
         cell.heart.hidden = NO;
