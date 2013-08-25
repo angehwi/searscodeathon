@@ -8,6 +8,7 @@
 
 #import "SEARSCollectionViewController.h"
 #import "SEARSCollectionViewCell.h"
+#import "SEARSCollectionViewFlowLayout.h"
 #import "SEARSHTTPModel.h"
 @interface SEARSCollectionViewController ()
 
@@ -20,13 +21,64 @@
 }
 
 
+#pragma mark - ViewController Life Cycle
+
+
 -(void)viewWillAppear:(BOOL)animated{
     NSLog(@"ViewWillAppear");
     
     listArray = [httpModel getList:@"like"];
     [self.collectionView reloadData];
 }
+- (void)viewDidLoad
+{
+    [super viewDidLoad];
+    NSLog(@"ViewDidLoad");
+	// Do any additional setup after loading the view.
+    httpModel = [SEARSHTTPModel sharedHTTPModel];
+    //    listDictionary = [[NSDictionary alloc] initWithDictionary:[httpModel getList:@"like"] copyItems:YES];
+    
+    
+    self.collectionView.dataSource = self;
+    photoQueue = [NSOperationQueue new];
+    
+    [self collectionViewStyle];
+    
+}
+- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
+{
+    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
+    if (self) {
+        // Custom initialization
+    }
+    return self;
+}
+- (void)didReceiveMemoryWarning
+{
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
+}
 
+
+#pragma mark - CollectionView Layout
+
+-(void)collectionViewStyle{
+    [self.collectionView setCollectionViewLayout:[[SEARSCollectionViewFlowLayout alloc] init] animated:NO];
+}
+-(UICollectionReusableView *)collectionView:(UICollectionView *)collectionView viewForSupplementaryElementOfKind:(NSString *)kind atIndexPath:(NSIndexPath *)indexPath{
+    UICollectionReusableView *reusableview = nil;
+    
+    if (kind == UICollectionElementKindSectionHeader) {
+    }
+    
+    if (kind == UICollectionElementKindSectionFooter) {
+    }
+    
+    return reusableview;
+}
+
+
+#pragma mark - CollectionView Delegates
 -(NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView{
     NSLog(@"numberOfSectionsInCollectionView");
     return 1;
@@ -41,7 +93,7 @@
     
     NSDictionary *cellDictionary = [listArray objectAtIndex:indexPath.row];
     
-    cell.createdDate.text  = [cellDictionary objectForKey:@"create_date"];
+    cell.store_name.text  = [cellDictionary objectForKey:@"store_name"];
     
     [photoQueue addOperationWithBlock:^{
         NSString *photoID = [cellDictionary objectForKey:@"prod_id"];
@@ -53,37 +105,8 @@
         [cell.productPhoto setContentMode:UIViewContentModeScaleAspectFit];
 
     }];
-//    http://talkloud.com/_sears/uploads/photo_1.jpg.
+
     return cell;
-}
-
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
-}
-
-- (void)viewDidLoad
-{
-    [super viewDidLoad];
-    NSLog(@"ViewDidLoad");
-	// Do any additional setup after loading the view.
-    httpModel = [SEARSHTTPModel sharedHTTPModel];
-//    listDictionary = [[NSDictionary alloc] initWithDictionary:[httpModel getList:@"like"] copyItems:YES];
-
-    
-    self.collectionView.dataSource = self;
-    photoQueue = [NSOperationQueue new];
-
-}
-
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 @end

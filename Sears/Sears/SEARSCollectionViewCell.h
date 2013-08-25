@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface SEARSCollectionViewCell : UICollectionViewCell
-@property (weak, nonatomic) IBOutlet UILabel *createdDate;
+@property (weak, nonatomic) IBOutlet UILabel *store_name;
 @property (weak, nonatomic) IBOutlet UIImageView *productPhoto;
-@property (nonatomic, copy) NSString *displayString;
+//@property (nonatomic, copy) NSString *displayString;
 @end

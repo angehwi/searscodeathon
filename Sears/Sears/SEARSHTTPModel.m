@@ -57,46 +57,73 @@ static SEARSHTTPModel *instance;
     return data;
 }
 
+-(NSString *)getLocation:(CGFloat)latitude Lng:(CGFloat)longitude{
+    NSData *data = [self getLocationFromMomentFeedWithLat:latitude Lng:longitude];
+    NSDictionary *result = [self parseJSONtoDictionary:data];
+    
+//    NSLog(@"Location Info\n%@",result);
+    NSArray *locations = [result objectForKey:@"locations"];
+    
+    if(0 == [locations count]){
+        return nil;
+    }
+    NSDictionary *location = [locations objectAtIndex:0];
+    NSString *address = [location objectForKey:@"address"];
+    
+    return address;
+}
+
+
+-(NSData *)getLocationFromMomentFeedWithLat:(CGFloat)latitude Lng:(CGFloat)longitude{
+
+    NSString *urlString = [NSString stringWithFormat:@"http://api.momentfeed.com/location/search?q={\"geo\":{\"lat\":\"%f\",\"lng\":\"%f\", \"radius\":\"10\"}}&api_token=sears", latitude, longitude];
+
+    urlString = [urlString stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+    NSURL *url = [NSURL URLWithString:urlString];
+    NSData *data= [NSData dataWithContentsOfURL:url];
+    return data;
+}
+
+
+//
+
 #pragma mark - setters
 
 -(void)postPhoto:(UIImage *)image{
     NSLog(@"PostPhoto");
-    NSData *data = [self postPhotoToServer:image];
-    NSArray *result = [self parseJSONtoArray:data];
+    NSString *result = [self postPhotoToServer:image];
     
     NSLog(@"List Info\n%@",result);
 //    return result;
 }
-
--(NSData *)postPhotoToServer:(UIImage *)image{
-    NSLog(@"postPhotoToServer");
-    /*
-	 turning the image into a NSData object
-	 getting the image back out of the UIImageView
-	 setting the quality to 90
-     */
-    if(nil==image){
-        NSLog(@"Image == nil");
-    }
-//	NSData *imageData = UIImageJPEGRepresentation(image, 1.0);
-
-    
-    // Let's save the file into Document folder.
-	// You can also change this to your desktop for testing. (e.g. /Users/kiichi/Desktop/)
-	// NSString *deskTopDir = @"/Users/kiichi/Desktop";
-    
-	NSString *docDir = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) objectAtIndex:0];
+-(NSString *)saveImageWithUIImage:(UIImage *)image{
+    NSString *docDir = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) objectAtIndex:0];
     
 	// If you go to the folder below, you will find those pictures
-	NSLog(@"%@",docDir);
+//	NSLog(@"%@",docDir);
     
-	NSLog(@"saving jpeg");
+//	NSLog(@"saving jpeg");
 	NSString *jpegFilePath = [NSString stringWithFormat:@"%@/uploadImage.jpeg",docDir];
 	NSData *data = [NSData dataWithData:UIImageJPEGRepresentation(image, 0.5f)];//1.0f = 100% quality
 	[data writeToFile:jpegFilePath atomically:YES];
+//    NSLog(@"saving image done");    
+    return jpegFilePath;
+}
+
+-(NSString *)postPhotoToServer:(UIImage *)image{
+    NSLog(@"postPhotoToServer");
     
-	NSLog(@"saving image done");
+    if(nil==image){
+        NSLog(@"Image == nil");
+    }
     
+    NSString *jpegFilePath = [self saveImageWithUIImage:image];
+    //latitude and longitude
+    CGFloat latitude =  37.64775;
+	CGFloat longitude = -122.45247;
+    
+    NSString *store_name = [self getLocation:latitude Lng:longitude];
+    NSLog(@"StoreName: %@", store_name);
 //    [imageData writeToFile:@"uploadImage.jpeg" atomically:NO];
 	// setting up the URL to post to
 	NSString *urlString = @"http://talkloud.com/_sears/app.php";
@@ -109,15 +136,6 @@ static SEARSHTTPModel *instance;
     [request setHTTPShouldHandleCookies:NO];
     [request setTimeoutInterval:30];
 
-	
-	/*
-	 add some header info now
-	 we always need a boundary when we post a file
-	 also we need to set the content type
-	 
-	 You might want to generate a random boundary.. this is just the same
-	 as my output from wireshark on a valid html post
-     */
 	NSString *boundary = [NSString stringWithString:@"---------------------------14737809831466499882746641449"];
 	NSString *contentType = [NSString stringWithFormat:@"multipart/form-data; boundary=%@",boundary];
 	[request addValue:contentType forHTTPHeaderField: @"Content-Type"];
@@ -129,6 +147,13 @@ static SEARSHTTPModel *instance;
     
     [body appendData:[[NSString stringWithFormat:@"--%@\r\n", boundary] dataUsingEncoding:NSUTF8StringEncoding]];
     [body appendData:[[NSString stringWithFormat:@"Content-Disposition: form-data; name=\"action\"\r\n\r\nadd\r\n"] dataUsingEncoding:NSUTF8StringEncoding]];
+//    [body appendData:[[NSString stringWithFormat:@"--%@\r\n", boundary] dataUsingEncoding:NSUTF8StringEncoding]];
+//    [body appendData:[[NSString stringWithFormat:@"Content-Disposition: form-data; name=\"latitude\"\r\n\r\n%f\r\n", latitude] dataUsingEncoding:NSUTF8StringEncoding]];
+//    [body appendData:[[NSString stringWithFormat:@"--%@\r\n", boundary] dataUsingEncoding:NSUTF8StringEncoding]];
+//    [body appendData:[[NSString stringWithFormat:@"Content-Disposition: form-data; name=\"longitude\"\r\n\r\n%f\r\n", longitude] dataUsingEncoding:NSUTF8StringEncoding]];
+//    [body appendData:[[NSString stringWithFormat:@"--%@\r\n", boundary] dataUsingEncoding:NSUTF8StringEncoding]];
+//    [body appendData:[[NSString stringWithFormat:@"Content-Disposition: form-data; name=\"store_name\"\r\n\r\n%@\r\n", store_name] dataUsingEncoding:NSUTF8StringEncoding]];
+    
 //    [body appendData:[[NSString stringWithFormat:@"%@\r\n", @"add"] dataUsingEncoding:NSUTF8StringEncoding]];
 
 	[body appendData:[[NSString stringWithFormat:@"--%@\r\n",boundary] dataUsingEncoding:NSUTF8StringEncoding]];
@@ -147,19 +172,8 @@ static SEARSHTTPModel *instance;
 	NSData *returnData = [NSURLConnection sendSynchronousRequest:request returningResponse:nil error:nil];
 	NSString *returnString = [[NSString alloc] initWithData:returnData encoding:NSUTF8StringEncoding];
 	
-	NSLog(@"Return: %@", returnString);
-    return nil;
-//
-//    NSData *data = UIImageJPEGRepresentation(image, 1.0);
-//    NSString *imageString = [data base64Encoding];
-//    NSString *urlString = [NSString stringWithFormat:@"http://talkloud.com/_sears/app.php?action=add&photo=%@", imageString];
-////    urlString = [urlString stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
-//    
-//    NSLog(@"URLString \n%@", urlString);
-//    NSURL *url = [NSURL URLWithString:urlString];
-//    NSData *result= [NSData dataWithContentsOfURL:url];
-//    NSLog(@"End:: postPhotoToServer");
-//    return result;
+//	NSLog(@"Return: %@", returnString);
+    return returnString;
 }
 
 #pragma mark - JSON Parsing

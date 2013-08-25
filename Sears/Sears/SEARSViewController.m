@@ -40,7 +40,7 @@
 -(void)initializeCollectinoView{
     collecionViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"COLLECION_VC"];
     [self addChildViewController:collecionViewController];
-    [self.view addSubview:collecionViewController.view];
+//    [self.view addSubview:collecionViewController.view];
     [collecionViewController didMoveToParentViewController:self];
 //    mainCollectionViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"MAIN_COLLECTION_VIEW"];
 //    [self addChildViewController:mainCollectionViewController];
