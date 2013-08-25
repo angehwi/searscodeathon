@@ -1,0 +1,246 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="3084" systemVersion="12E55" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="5LC-ge-i1Q">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="2083"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller - SEARS-->
+        <scene sceneID="t7T-nP-s5l">
+            <objects>
+                <viewController storyboardIdentifier="MAIN_VC" title="SEARS" id="AuH-iE-Nsd" customClass="SEARSViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Yez-oG-QmF">
+                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <containerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ly1-I0-Ngb">
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                <connections>
+                                    <segue destination="Bc4-Tr-0Ms" kind="embed" id="pKi-id-BSx"/>
+                                </connections>
+                            </containerView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Ly1-I0-Ngb" firstAttribute="trailing" secondItem="Yez-oG-QmF" secondAttribute="trailing" type="default" id="Khx-tJ-P6G"/>
+                            <constraint firstItem="Ly1-I0-Ngb" firstAttribute="top" secondItem="Yez-oG-QmF" secondAttribute="top" type="default" id="LwO-kQ-GOi"/>
+                            <constraint firstItem="Ly1-I0-Ngb" firstAttribute="bottom" secondItem="Yez-oG-QmF" secondAttribute="bottom" type="default" id="ifq-uG-Sru"/>
+                            <constraint firstItem="Ly1-I0-Ngb" firstAttribute="leading" secondItem="Yez-oG-QmF" secondAttribute="leading" type="default" id="y9c-4V-bdi"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="2nh-HM-v68">
+                        <barButtonItem key="rightBarButtonItem" systemItem="camera" id="aPM-ve-e8v">
+                            <connections>
+                                <segue destination="qbX-yH-Onq" kind="push" id="gp2-0Q-aSY"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="collectionViewContainer" destination="Ly1-I0-Ngb" id="I8m-Hq-ub8"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cg9-WA-Wca" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="547" y="-3"/>
+        </scene>
+        <!--Post View Controller-->
+        <scene sceneID="JAP-bQ-Abq">
+            <objects>
+                <viewController id="qbX-yH-Onq" customClass="SEARSPostViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="67h-RP-tme">
+                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OYX-c5-Kb0">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="219" id="1Hb-LG-Xaa"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="89s-Pd-RX0">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="73" id="wBI-1M-vDr"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="Post">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="handlePost:" destination="qbX-yH-Onq" eventType="touchUpInside" id="7LJ-vs-nF0"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LGt-w9-Dej">
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="lIs-BW-qFq">
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="OYX-c5-Kb0" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="3hv-QO-Dqw"/>
+                            <constraint firstAttribute="trailing" secondItem="lIs-BW-qFq" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="6Zo-Jt-0qd"/>
+                            <constraint firstItem="lIs-BW-qFq" firstAttribute="leading" secondItem="67h-RP-tme" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="9Sg-LW-7Sk"/>
+                            <constraint firstAttribute="bottom" secondItem="89s-Pd-RX0" secondAttribute="bottom" constant="20" symbolic="YES" type="default" id="Ebd-Ra-iua"/>
+                            <constraint firstItem="OYX-c5-Kb0" firstAttribute="leading" secondItem="67h-RP-tme" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="REc-dT-XiN"/>
+                            <constraint firstItem="LGt-w9-Dej" firstAttribute="leading" secondItem="67h-RP-tme" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="Sri-4C-laZ"/>
+                            <constraint firstItem="OYX-c5-Kb0" firstAttribute="top" secondItem="67h-RP-tme" secondAttribute="top" constant="20" symbolic="YES" type="default" id="aDf-tf-ehW"/>
+                            <constraint firstItem="lIs-BW-qFq" firstAttribute="centerX" secondItem="89s-Pd-RX0" secondAttribute="centerX" type="default" id="bhg-ul-hym"/>
+                            <constraint firstItem="LGt-w9-Dej" firstAttribute="top" secondItem="OYX-c5-Kb0" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="d6v-Rj-6R4"/>
+                            <constraint firstItem="lIs-BW-qFq" firstAttribute="top" secondItem="LGt-w9-Dej" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="n2W-ci-khu"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="819-oa-GGp"/>
+                    <connections>
+                        <outlet property="postImageView" destination="OYX-c5-Kb0" id="89v-9z-twJ"/>
+                        <outlet property="titleText" destination="lIs-BW-qFq" id="Tcb-eJ-oEK"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cRx-N3-5AC" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="993" y="-3"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="3in-V5-van">
+            <objects>
+                <navigationController id="5LC-ge-i1Q" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="4ln-Zs-xhN">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="AuH-iE-Nsd" kind="relationship" relationship="rootViewController" id="G6m-rL-hev"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="q6L-wt-gUf" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="21" y="-3"/>
+        </scene>
+        <!--Collection View Controller-->
+        <scene sceneID="Vco-15-3O6">
+            <objects>
+                <viewController storyboardIdentifier="COLLECION_VC" id="Bc4-Tr-0Ms" customClass="SEARSCollectionViewController" sceneMemberID="viewController">
+                    <view key="view" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="2Wa-Xz-uVt">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="504"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" minimumZoomScale="0.0" maximumZoomScale="0.0" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="KsJ-5d-29a">
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="LkE-IR-lPt">
+                                    <size key="itemSize" width="151" height="146"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="PHOTO_CELL" id="4IR-s5-bOb" customClass="SEARSCollectionViewCell">
+                                        <rect key="frame" x="0.0" y="0.0" width="151" height="146"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="151" height="146"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="deC-jc-cXc">
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vfF-jf-qFE">
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="98" id="At1-Ru-ueH"/>
+                                                    </constraints>
+                                                </imageView>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstItem="vfF-jf-qFE" firstAttribute="trailing" secondItem="4IR-s5-bOb" secondAttribute="trailing" type="default" id="TfK-TB-S37"/>
+                                            <constraint firstItem="vfF-jf-qFE" firstAttribute="top" secondItem="4IR-s5-bOb" secondAttribute="top" type="default" id="YQI-3g-JRo"/>
+                                            <constraint firstItem="deC-jc-cXc" firstAttribute="top" secondItem="vfF-jf-qFE" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="hib-iA-hFj"/>
+                                            <constraint firstItem="deC-jc-cXc" firstAttribute="centerX" secondItem="4IR-s5-bOb" secondAttribute="centerX" type="default" id="rGJ-2x-yDv"/>
+                                            <constraint firstItem="vfF-jf-qFE" firstAttribute="leading" secondItem="4IR-s5-bOb" secondAttribute="leading" type="default" id="txT-VV-AKs"/>
+                                        </constraints>
+                                        <size key="customSize" width="151" height="146"/>
+                                        <connections>
+                                            <outlet property="createdDate" destination="deC-jc-cXc" id="bqs-vs-7mU"/>
+                                            <outlet property="productPhoto" destination="vfF-jf-qFE" id="6mP-Xr-kXZ"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
+                        </subviews>
+                        <color key="backgroundColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="KsJ-5d-29a" firstAttribute="top" secondItem="2Wa-Xz-uVt" secondAttribute="top" type="default" id="Kqq-8k-Ixt"/>
+                            <constraint firstItem="KsJ-5d-29a" firstAttribute="leading" secondItem="2Wa-Xz-uVt" secondAttribute="leading" type="default" id="Nmx-U9-hbE"/>
+                            <constraint firstItem="KsJ-5d-29a" firstAttribute="trailing" secondItem="2Wa-Xz-uVt" secondAttribute="trailing" type="default" id="TPx-we-ETN"/>
+                            <constraint firstItem="KsJ-5d-29a" firstAttribute="bottom" secondItem="2Wa-Xz-uVt" secondAttribute="bottom" type="default" id="xwS-aI-s9K"/>
+                        </constraints>
+                    </view>
+                    <toolbarItems/>
+                    <connections>
+                        <outlet property="collectionView" destination="KsJ-5d-29a" id="O2y-FB-XYg"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fha-7j-lF3" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="993" y="-654"/>
+        </scene>
+    </scenes>
+    <classes>
+        <class className="NSLayoutConstraint" superclassName="NSObject">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
+        </class>
+        <class className="SEARSCollectionViewCell" superclassName="UICollectionViewCell">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/SEARSCollectionViewCell.h"/>
+            <relationships>
+                <relationship kind="outlet" name="createdDate" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="productPhoto" candidateClass="UIImageView"/>
+            </relationships>
+        </class>
+        <class className="SEARSCollectionViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/SEARSCollectionViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="collectionView" candidateClass="UICollectionView"/>
+            </relationships>
+        </class>
+        <class className="SEARSPostViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/SEARSPostViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="handlePost:"/>
+                <relationship kind="outlet" name="postImageView" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="titleText" candidateClass="UITextField"/>
+            </relationships>
+        </class>
+        <class className="SEARSViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/SEARSViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="collectionViewContainer" candidateClass="UIView"/>
+            </relationships>
+        </class>
+        <class className="UICollectionReusableView" superclassName="UIView">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/UICollectionReusableView.h"/>
+        </class>
+        <class className="UICollectionViewCell" superclassName="UICollectionReusableView">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/UICollectionViewCell.h"/>
+        </class>
+        <class className="UICollectionViewFlowLayout" superclassName="UICollectionViewLayout">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/UICollectionViewFlowLayout.h"/>
+        </class>
+        <class className="UICollectionViewLayout" superclassName="NSObject">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/UICollectionViewLayout.h"/>
+        </class>
+    </classes>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination" type="retina4"/>
+    </simulatedMetricsContainer>
+</document>

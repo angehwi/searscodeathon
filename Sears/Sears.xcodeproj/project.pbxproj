@@ -18,11 +18,11 @@
 		9126FA1C17C94CF000CF4F25 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9126FA1B17C94CF000CF4F25 /* Default@2x.png */; };
 		9126FA1E17C94CF000CF4F25 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9126FA1D17C94CF000CF4F25 /* Default-568h@2x.png */; };
 		9126FA2117C94CF000CF4F25 /* Sears.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9126FA1F17C94CF000CF4F25 /* Sears.xcdatamodeld */; };
-		9126FA2817C94D2300CF4F25 /* iPhoneStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9126FA2717C94D2300CF4F25 /* iPhoneStoryboard.storyboard */; };
 		913C981317C96FF200EBC8F8 /* SEARSCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 913C981217C96FF200EBC8F8 /* SEARSCollectionViewCell.m */; };
 		913C981617C9732400EBC8F8 /* SEARSHTTPModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 913C981517C9732400EBC8F8 /* SEARSHTTPModel.m */; };
 		913C981917C9768100EBC8F8 /* SEARSCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 913C981817C9768100EBC8F8 /* SEARSCollectionViewController.m */; };
 		913C981D17C9811300EBC8F8 /* JSONKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 913C981C17C97F6E00EBC8F8 /* JSONKit.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		9140FDB717C98A3500E75828 /* iPhoneStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9140FDB617C98A3500E75828 /* iPhoneStoryboard.storyboard */; };
 		915CD95917C95BE5001AB978 /* ApigeeiOSSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 915CD95817C95BE5001AB978 /* ApigeeiOSSDK.framework */; };
 		915CD95C17C95E5A001AB978 /* SEARSPostViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 915CD95B17C95E5A001AB978 /* SEARSPostViewController.m */; };
 		915CD95E17C95FAC001AB978 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 915CD95D17C95FAC001AB978 /* CoreLocation.framework */; };
@@ -48,7 +48,6 @@
 		9126FA1B17C94CF000CF4F25 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		9126FA1D17C94CF000CF4F25 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		9126FA2017C94CF000CF4F25 /* Sears.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Sears.xcdatamodel; sourceTree = "<group>"; };
-		9126FA2717C94D2300CF4F25 /* iPhoneStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = iPhoneStoryboard.storyboard; path = ../../iPhoneStoryboard.storyboard; sourceTree = "<group>"; };
 		913C981117C96FF200EBC8F8 /* SEARSCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SEARSCollectionViewCell.h; sourceTree = "<group>"; };
 		913C981217C96FF200EBC8F8 /* SEARSCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SEARSCollectionViewCell.m; sourceTree = "<group>"; };
 		913C981417C9732400EBC8F8 /* SEARSHTTPModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SEARSHTTPModel.h; sourceTree = "<group>"; };
@@ -57,6 +56,7 @@
 		913C981817C9768100EBC8F8 /* SEARSCollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SEARSCollectionViewController.m; sourceTree = "<group>"; };
 		913C981B17C97F6E00EBC8F8 /* JSONKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JSONKit.h; sourceTree = "<group>"; };
 		913C981C17C97F6E00EBC8F8 /* JSONKit.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JSONKit.m; sourceTree = "<group>"; };
+		9140FDB617C98A3500E75828 /* iPhoneStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = iPhoneStoryboard.storyboard; sourceTree = "<group>"; };
 		915CD95817C95BE5001AB978 /* ApigeeiOSSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ApigeeiOSSDK.framework; path = "../../../Downloads/apigee-ios-sdk-2.0.0/bin/ApigeeiOSSDK.framework"; sourceTree = "<group>"; };
 		915CD95A17C95E5A001AB978 /* SEARSPostViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SEARSPostViewController.h; sourceTree = "<group>"; };
 		915CD95B17C95E5A001AB978 /* SEARSPostViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SEARSPostViewController.m; sourceTree = "<group>"; };
@@ -130,7 +130,7 @@
 				9126FA1617C94CF000CF4F25 /* SEARSAppDelegate.h */,
 				9126FA1717C94CF000CF4F25 /* SEARSAppDelegate.m */,
 				9126FA1F17C94CF000CF4F25 /* Sears.xcdatamodeld */,
-				9126FA2717C94D2300CF4F25 /* iPhoneStoryboard.storyboard */,
+				9140FDB617C98A3500E75828 /* iPhoneStoryboard.storyboard */,
 				9126FA0E17C94CF000CF4F25 /* Supporting Files */,
 			);
 			path = Sears;
@@ -247,7 +247,7 @@
 				9126FA1A17C94CF000CF4F25 /* Default.png in Resources */,
 				9126FA1C17C94CF000CF4F25 /* Default@2x.png in Resources */,
 				9126FA1E17C94CF000CF4F25 /* Default-568h@2x.png in Resources */,
-				9126FA2817C94D2300CF4F25 /* iPhoneStoryboard.storyboard in Resources */,
+				9140FDB717C98A3500E75828 /* iPhoneStoryboard.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
