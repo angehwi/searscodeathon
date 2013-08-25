@@ -146,26 +146,23 @@
                                             <rect key="frame" x="0.0" y="0.0" width="151" height="146"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vfF-jf-qFE"/>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="deC-jc-cXc">
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vfF-jf-qFE">
-                                                    <constraints>
-                                                        <constraint firstAttribute="height" constant="98" id="At1-Ru-ueH"/>
-                                                    </constraints>
-                                                </imageView>
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
                                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
-                                            <constraint firstItem="vfF-jf-qFE" firstAttribute="trailing" secondItem="4IR-s5-bOb" secondAttribute="trailing" type="default" id="TfK-TB-S37"/>
-                                            <constraint firstItem="vfF-jf-qFE" firstAttribute="top" secondItem="4IR-s5-bOb" secondAttribute="top" type="default" id="YQI-3g-JRo"/>
-                                            <constraint firstItem="deC-jc-cXc" firstAttribute="top" secondItem="vfF-jf-qFE" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="hib-iA-hFj"/>
+                                            <constraint firstItem="vfF-jf-qFE" firstAttribute="top" secondItem="4IR-s5-bOb" secondAttribute="top" type="default" id="FH0-d1-XpI"/>
+                                            <constraint firstItem="vfF-jf-qFE" firstAttribute="bottom" secondItem="4IR-s5-bOb" secondAttribute="bottom" type="default" id="LMV-2b-rGt"/>
+                                            <constraint firstItem="vfF-jf-qFE" firstAttribute="trailing" secondItem="4IR-s5-bOb" secondAttribute="trailing" type="default" id="Qno-JW-n1B"/>
+                                            <constraint firstAttribute="bottom" secondItem="deC-jc-cXc" secondAttribute="bottom" constant="19" id="inY-FL-ZSu"/>
                                             <constraint firstItem="deC-jc-cXc" firstAttribute="centerX" secondItem="4IR-s5-bOb" secondAttribute="centerX" type="default" id="rGJ-2x-yDv"/>
-                                            <constraint firstItem="vfF-jf-qFE" firstAttribute="leading" secondItem="4IR-s5-bOb" secondAttribute="leading" type="default" id="txT-VV-AKs"/>
+                                            <constraint firstItem="vfF-jf-qFE" firstAttribute="leading" secondItem="4IR-s5-bOb" secondAttribute="leading" type="default" id="sQz-aW-uxs"/>
                                         </constraints>
                                         <size key="customSize" width="151" height="146"/>
                                         <connections>

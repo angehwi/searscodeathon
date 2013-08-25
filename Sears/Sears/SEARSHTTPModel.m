@@ -7,7 +7,7 @@
 //
 
 #import "SEARSHTTPModel.h"
-#import "NSDataAdditions.h"
+
 
 @implementation SEARSHTTPModel
 
