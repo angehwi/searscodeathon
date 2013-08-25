@@ -29,6 +29,8 @@
 {
     [super viewDidLoad];
     
+    NSLog(@"Dictionary: %@", self.dict);
+    
     [self.contentScrollView setDelegate:self]; 
     [self.contentScrollView setScrollEnabled:YES];
     [self.contentScrollView setContentSize:CGSizeMake(320, self.photoView.frame.size.height + self.addDetailButton.frame.size.height + self.detailInfoView.frame.size.height )];
@@ -37,7 +39,7 @@
      // TODO: dict받은 뒤 주석 해제하기. 
 //    [_photoView setImageWithURL:[NSURL URLWithString: [_dict objectForKey:@"id"]]
 //                      placeholderImage:[UIImage imageNamed:@"placeholder.png"]];
-    [_photoView setImageWithURL:[NSURL URLWithString: @"http://talkloud.com/_sears/uploads/photo_1.jpg"]];
+    [_photoView setImageWithURL:[NSURL URLWithString: [NSString stringWithFormat: @"http://talkloud.com/_sears/uploads/photo_%@.jpg", [self.dict objectForKey:@"prod_id"]]] placeholderImage:[UIImage imageNamed:@"placeholder.png"]];
     
 }
 

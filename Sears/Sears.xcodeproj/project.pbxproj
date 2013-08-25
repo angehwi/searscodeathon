@@ -154,10 +154,10 @@
 		9126FA0D17C94CF000CF4F25 /* Sears */ = {
 			isa = PBXGroup;
 			children = (
-				E557016F17CA108800DCC8F3 /* DetailViewController */,
 				9140FDC117C9F5FB00E75828 /* ImageResources */,
 				913C981A17C97F6500EBC8F8 /* JSONKit */,
 				915CD96B17C96898001AB978 /* MainViewController */,
+				E557016F17CA108800DCC8F3 /* DetailViewController */,
 				E557016517CA100200DCC8F3 /* CatalogueViewController */,
 				915CD96817C9643D001AB978 /* Models */,
 				9126FA1617C94CF000CF4F25 /* SEARSAppDelegate.h */,
