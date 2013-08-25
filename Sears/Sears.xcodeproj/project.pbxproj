@@ -1,0 +1,410 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		9126FA0617C94CF000CF4F25 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9126FA0517C94CF000CF4F25 /* UIKit.framework */; };
+		9126FA0817C94CF000CF4F25 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9126FA0717C94CF000CF4F25 /* Foundation.framework */; };
+		9126FA0A17C94CF000CF4F25 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9126FA0917C94CF000CF4F25 /* CoreGraphics.framework */; };
+		9126FA0C17C94CF000CF4F25 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9126FA0B17C94CF000CF4F25 /* CoreData.framework */; };
+		9126FA1217C94CF000CF4F25 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 9126FA1017C94CF000CF4F25 /* InfoPlist.strings */; };
+		9126FA1417C94CF000CF4F25 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 9126FA1317C94CF000CF4F25 /* main.m */; };
+		9126FA1817C94CF000CF4F25 /* SEARSAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9126FA1717C94CF000CF4F25 /* SEARSAppDelegate.m */; };
+		9126FA1A17C94CF000CF4F25 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 9126FA1917C94CF000CF4F25 /* Default.png */; };
+		9126FA1C17C94CF000CF4F25 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9126FA1B17C94CF000CF4F25 /* Default@2x.png */; };
+		9126FA1E17C94CF000CF4F25 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9126FA1D17C94CF000CF4F25 /* Default-568h@2x.png */; };
+		9126FA2117C94CF000CF4F25 /* Sears.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9126FA1F17C94CF000CF4F25 /* Sears.xcdatamodeld */; };
+		9126FA2817C94D2300CF4F25 /* iPhoneStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9126FA2717C94D2300CF4F25 /* iPhoneStoryboard.storyboard */; };
+		913C981317C96FF200EBC8F8 /* SEARSCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 913C981217C96FF200EBC8F8 /* SEARSCollectionViewCell.m */; };
+		913C981617C9732400EBC8F8 /* SEARSHTTPModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 913C981517C9732400EBC8F8 /* SEARSHTTPModel.m */; };
+		913C981917C9768100EBC8F8 /* SEARSCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 913C981817C9768100EBC8F8 /* SEARSCollectionViewController.m */; };
+		913C981D17C9811300EBC8F8 /* JSONKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 913C981C17C97F6E00EBC8F8 /* JSONKit.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		915CD95917C95BE5001AB978 /* ApigeeiOSSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 915CD95817C95BE5001AB978 /* ApigeeiOSSDK.framework */; };
+		915CD95C17C95E5A001AB978 /* SEARSPostViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 915CD95B17C95E5A001AB978 /* SEARSPostViewController.m */; };
+		915CD95E17C95FAC001AB978 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 915CD95D17C95FAC001AB978 /* CoreLocation.framework */; };
+		915CD96017C95FB2001AB978 /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 915CD95F17C95FB2001AB978 /* CoreTelephony.framework */; };
+		915CD96217C95FB9001AB978 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 915CD96117C95FB9001AB978 /* Security.framework */; };
+		915CD96417C95FC2001AB978 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 915CD96317C95FC2001AB978 /* SystemConfiguration.framework */; };
+		916E678A17C94DC0005E890B /* SEARSViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 916E678917C94DC0005E890B /* SEARSViewController.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		9126FA0217C94CF000CF4F25 /* Sears.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Sears.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		9126FA0517C94CF000CF4F25 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		9126FA0717C94CF000CF4F25 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		9126FA0917C94CF000CF4F25 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		9126FA0B17C94CF000CF4F25 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		9126FA0F17C94CF000CF4F25 /* Sears-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Sears-Info.plist"; sourceTree = "<group>"; };
+		9126FA1117C94CF000CF4F25 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		9126FA1317C94CF000CF4F25 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		9126FA1517C94CF000CF4F25 /* Sears-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Sears-Prefix.pch"; sourceTree = "<group>"; };
+		9126FA1617C94CF000CF4F25 /* SEARSAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SEARSAppDelegate.h; sourceTree = "<group>"; };
+		9126FA1717C94CF000CF4F25 /* SEARSAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SEARSAppDelegate.m; sourceTree = "<group>"; };
+		9126FA1917C94CF000CF4F25 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
+		9126FA1B17C94CF000CF4F25 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
+		9126FA1D17C94CF000CF4F25 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		9126FA2017C94CF000CF4F25 /* Sears.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Sears.xcdatamodel; sourceTree = "<group>"; };
+		9126FA2717C94D2300CF4F25 /* iPhoneStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = iPhoneStoryboard.storyboard; path = ../../iPhoneStoryboard.storyboard; sourceTree = "<group>"; };
+		913C981117C96FF200EBC8F8 /* SEARSCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SEARSCollectionViewCell.h; sourceTree = "<group>"; };
+		913C981217C96FF200EBC8F8 /* SEARSCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SEARSCollectionViewCell.m; sourceTree = "<group>"; };
+		913C981417C9732400EBC8F8 /* SEARSHTTPModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SEARSHTTPModel.h; sourceTree = "<group>"; };
+		913C981517C9732400EBC8F8 /* SEARSHTTPModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SEARSHTTPModel.m; sourceTree = "<group>"; };
+		913C981717C9768100EBC8F8 /* SEARSCollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SEARSCollectionViewController.h; sourceTree = "<group>"; };
+		913C981817C9768100EBC8F8 /* SEARSCollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SEARSCollectionViewController.m; sourceTree = "<group>"; };
+		913C981B17C97F6E00EBC8F8 /* JSONKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JSONKit.h; sourceTree = "<group>"; };
+		913C981C17C97F6E00EBC8F8 /* JSONKit.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JSONKit.m; sourceTree = "<group>"; };
+		915CD95817C95BE5001AB978 /* ApigeeiOSSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ApigeeiOSSDK.framework; path = "../../../Downloads/apigee-ios-sdk-2.0.0/bin/ApigeeiOSSDK.framework"; sourceTree = "<group>"; };
+		915CD95A17C95E5A001AB978 /* SEARSPostViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SEARSPostViewController.h; sourceTree = "<group>"; };
+		915CD95B17C95E5A001AB978 /* SEARSPostViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SEARSPostViewController.m; sourceTree = "<group>"; };
+		915CD95D17C95FAC001AB978 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		915CD95F17C95FB2001AB978 /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
+		915CD96117C95FB9001AB978 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		915CD96317C95FC2001AB978 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		916E678817C94DC0005E890B /* SEARSViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SEARSViewController.h; sourceTree = "<group>"; };
+		916E678917C94DC0005E890B /* SEARSViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SEARSViewController.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		9126F9FF17C94CF000CF4F25 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				915CD96417C95FC2001AB978 /* SystemConfiguration.framework in Frameworks */,
+				915CD96217C95FB9001AB978 /* Security.framework in Frameworks */,
+				915CD96017C95FB2001AB978 /* CoreTelephony.framework in Frameworks */,
+				915CD95E17C95FAC001AB978 /* CoreLocation.framework in Frameworks */,
+				9126FA0A17C94CF000CF4F25 /* CoreGraphics.framework in Frameworks */,
+				9126FA0617C94CF000CF4F25 /* UIKit.framework in Frameworks */,
+				9126FA0817C94CF000CF4F25 /* Foundation.framework in Frameworks */,
+				9126FA0C17C94CF000CF4F25 /* CoreData.framework in Frameworks */,
+				915CD95917C95BE5001AB978 /* ApigeeiOSSDK.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		9126F9F917C94CF000CF4F25 = {
+			isa = PBXGroup;
+			children = (
+				915CD96317C95FC2001AB978 /* SystemConfiguration.framework */,
+				915CD96117C95FB9001AB978 /* Security.framework */,
+				915CD95F17C95FB2001AB978 /* CoreTelephony.framework */,
+				915CD95D17C95FAC001AB978 /* CoreLocation.framework */,
+				915CD95817C95BE5001AB978 /* ApigeeiOSSDK.framework */,
+				9126FA0D17C94CF000CF4F25 /* Sears */,
+				9126FA0417C94CF000CF4F25 /* Frameworks */,
+				9126FA0317C94CF000CF4F25 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		9126FA0317C94CF000CF4F25 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				9126FA0217C94CF000CF4F25 /* Sears.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		9126FA0417C94CF000CF4F25 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				9126FA0517C94CF000CF4F25 /* UIKit.framework */,
+				9126FA0717C94CF000CF4F25 /* Foundation.framework */,
+				9126FA0917C94CF000CF4F25 /* CoreGraphics.framework */,
+				9126FA0B17C94CF000CF4F25 /* CoreData.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		9126FA0D17C94CF000CF4F25 /* Sears */ = {
+			isa = PBXGroup;
+			children = (
+				913C981A17C97F6500EBC8F8 /* JSONKit */,
+				915CD96B17C96898001AB978 /* MainViewController */,
+				915CD96817C9643D001AB978 /* Models */,
+				9126FA1617C94CF000CF4F25 /* SEARSAppDelegate.h */,
+				9126FA1717C94CF000CF4F25 /* SEARSAppDelegate.m */,
+				9126FA1F17C94CF000CF4F25 /* Sears.xcdatamodeld */,
+				9126FA2717C94D2300CF4F25 /* iPhoneStoryboard.storyboard */,
+				9126FA0E17C94CF000CF4F25 /* Supporting Files */,
+			);
+			path = Sears;
+			sourceTree = "<group>";
+		};
+		9126FA0E17C94CF000CF4F25 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				9126FA0F17C94CF000CF4F25 /* Sears-Info.plist */,
+				9126FA1017C94CF000CF4F25 /* InfoPlist.strings */,
+				9126FA1317C94CF000CF4F25 /* main.m */,
+				9126FA1517C94CF000CF4F25 /* Sears-Prefix.pch */,
+				9126FA1917C94CF000CF4F25 /* Default.png */,
+				9126FA1B17C94CF000CF4F25 /* Default@2x.png */,
+				9126FA1D17C94CF000CF4F25 /* Default-568h@2x.png */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		913C981A17C97F6500EBC8F8 /* JSONKit */ = {
+			isa = PBXGroup;
+			children = (
+				913C981B17C97F6E00EBC8F8 /* JSONKit.h */,
+				913C981C17C97F6E00EBC8F8 /* JSONKit.m */,
+			);
+			name = JSONKit;
+			sourceTree = "<group>";
+		};
+		915CD96817C9643D001AB978 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				913C981417C9732400EBC8F8 /* SEARSHTTPModel.h */,
+				913C981517C9732400EBC8F8 /* SEARSHTTPModel.m */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		915CD96B17C96898001AB978 /* MainViewController */ = {
+			isa = PBXGroup;
+			children = (
+				915CD96C17C968A7001AB978 /* CollectionViewController */,
+				916E678817C94DC0005E890B /* SEARSViewController.h */,
+				916E678917C94DC0005E890B /* SEARSViewController.m */,
+				915CD95A17C95E5A001AB978 /* SEARSPostViewController.h */,
+				915CD95B17C95E5A001AB978 /* SEARSPostViewController.m */,
+			);
+			name = MainViewController;
+			sourceTree = "<group>";
+		};
+		915CD96C17C968A7001AB978 /* CollectionViewController */ = {
+			isa = PBXGroup;
+			children = (
+				913C981117C96FF200EBC8F8 /* SEARSCollectionViewCell.h */,
+				913C981217C96FF200EBC8F8 /* SEARSCollectionViewCell.m */,
+				913C981717C9768100EBC8F8 /* SEARSCollectionViewController.h */,
+				913C981817C9768100EBC8F8 /* SEARSCollectionViewController.m */,
+			);
+			name = CollectionViewController;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		9126FA0117C94CF000CF4F25 /* Sears */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9126FA2417C94CF000CF4F25 /* Build configuration list for PBXNativeTarget "Sears" */;
+			buildPhases = (
+				9126F9FE17C94CF000CF4F25 /* Sources */,
+				9126F9FF17C94CF000CF4F25 /* Frameworks */,
+				9126FA0017C94CF000CF4F25 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Sears;
+			productName = Sears;
+			productReference = 9126FA0217C94CF000CF4F25 /* Sears.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		9126F9FA17C94CF000CF4F25 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = SEARS;
+				LastUpgradeCheck = 0460;
+				ORGANIZATIONNAME = SEARS;
+			};
+			buildConfigurationList = 9126F9FD17C94CF000CF4F25 /* Build configuration list for PBXProject "Sears" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 9126F9F917C94CF000CF4F25;
+			productRefGroup = 9126FA0317C94CF000CF4F25 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				9126FA0117C94CF000CF4F25 /* Sears */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		9126FA0017C94CF000CF4F25 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9126FA1217C94CF000CF4F25 /* InfoPlist.strings in Resources */,
+				9126FA1A17C94CF000CF4F25 /* Default.png in Resources */,
+				9126FA1C17C94CF000CF4F25 /* Default@2x.png in Resources */,
+				9126FA1E17C94CF000CF4F25 /* Default-568h@2x.png in Resources */,
+				9126FA2817C94D2300CF4F25 /* iPhoneStoryboard.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		9126F9FE17C94CF000CF4F25 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				913C981D17C9811300EBC8F8 /* JSONKit.m in Sources */,
+				9126FA1417C94CF000CF4F25 /* main.m in Sources */,
+				9126FA1817C94CF000CF4F25 /* SEARSAppDelegate.m in Sources */,
+				9126FA2117C94CF000CF4F25 /* Sears.xcdatamodeld in Sources */,
+				916E678A17C94DC0005E890B /* SEARSViewController.m in Sources */,
+				915CD95C17C95E5A001AB978 /* SEARSPostViewController.m in Sources */,
+				913C981317C96FF200EBC8F8 /* SEARSCollectionViewCell.m in Sources */,
+				913C981617C9732400EBC8F8 /* SEARSHTTPModel.m in Sources */,
+				913C981917C9768100EBC8F8 /* SEARSCollectionViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		9126FA1017C94CF000CF4F25 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				9126FA1117C94CF000CF4F25 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		9126FA2217C94CF000CF4F25 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		9126FA2317C94CF000CF4F25 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		9126FA2517C94CF000CF4F25 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/../../../Downloads/apigee-ios-sdk-2.0.0/bin\"",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Sears/Sears-Prefix.pch";
+				INFOPLIST_FILE = "Sears/Sears-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		9126FA2617C94CF000CF4F25 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/../../../Downloads/apigee-ios-sdk-2.0.0/bin\"",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Sears/Sears-Prefix.pch";
+				INFOPLIST_FILE = "Sears/Sears-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		9126F9FD17C94CF000CF4F25 /* Build configuration list for PBXProject "Sears" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9126FA2217C94CF000CF4F25 /* Debug */,
+				9126FA2317C94CF000CF4F25 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9126FA2417C94CF000CF4F25 /* Build configuration list for PBXNativeTarget "Sears" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9126FA2517C94CF000CF4F25 /* Debug */,
+				9126FA2617C94CF000CF4F25 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		9126FA1F17C94CF000CF4F25 /* Sears.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				9126FA2017C94CF000CF4F25 /* Sears.xcdatamodel */,
+			);
+			currentVersion = 9126FA2017C94CF000CF4F25 /* Sears.xcdatamodel */;
+			path = Sears.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 9126F9FA17C94CF000CF4F25 /* Project object */;
+}
