@@ -16,4 +16,6 @@
 -(void)updateProduct:(NSDictionary *)productDic;
 -(NSDictionary *)getProductWithProductID:(NSString *)productID;
 -(void)likeWithProductID:(NSString *)productID;
+-(NSString *)sendPush;
+-(NSString *)commitWithProductID:(NSString *)productID;
 @end

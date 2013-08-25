@@ -20,6 +20,7 @@
 @property (weak, nonatomic) IBOutlet UIImageView *searsPhotoView;
 @property (weak, nonatomic) IBOutlet UIButton *likeButton;
 @property (weak, nonatomic) IBOutlet UILabel *likeLabel;
+@property (weak, nonatomic) IBOutlet UILabel *commitLabel;
 
 -(void) addDetailInformation:(NSDictionary *)info;
 

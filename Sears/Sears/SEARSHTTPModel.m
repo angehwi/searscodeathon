@@ -118,6 +118,8 @@ static SEARSHTTPModel *instance;
 }
 
 
+
+
 -(void)postPhoto:(UIImage *)image{
     NSLog(@"PostPhoto");
     NSString *result = [self postPhotoToServer:image];
@@ -211,6 +213,22 @@ static SEARSHTTPModel *instance;
     NSLog(@"Update Product Result:%@",result);
     //    return result;
 }
+-(NSString *)commitWithProductID:(NSString *)productID{
+    NSMutableString *urlString = [NSMutableString stringWithFormat:@"http://talkloud.com/_sears/app.php?action=commit"];
+    
+    [urlString appendString:[NSString stringWithFormat:@"&prod_id=%@",productID]];
+   
+    //    NSString *newURL = [NSString stringWithFormat:@"%@", urlString];
+    //    newURL = [self encodeURL:newURL];
+    urlString = [urlString stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+    
+    NSLog(@"UpdateURL: %@", urlString);
+    NSURL *url = [NSURL URLWithString:urlString];
+    NSData *data= [NSData dataWithContentsOfURL:url];
+    NSString *returnString = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
+    
+    return returnString;
+}
 
 -(NSString *)updateProductToServer:(NSDictionary *)productDic{
     NSMutableString *urlString = [NSMutableString stringWithFormat:@"http://talkloud.com/_sears/app.php?action=update"];
@@ -232,54 +250,54 @@ static SEARSHTTPModel *instance;
 
     return returnString;
 }
-//-(NSString *)updateProductToServer:(NSDictionary *)productDic{
-//    NSLog(@"postPhotoToServer");
-//    
-////    NSString *jpegFilePath = [self saveImageWithUIImage:image];
-//    //    [imageData writeToFile:@"uploadImage.jpeg" atomically:NO];
-//	// setting up the URL to post to
-//	NSString *urlString = @"http://talkloud.com/_sears/app.php";
-//	
-//	// setting up the request object now
-//	NSMutableURLRequest *request = [[NSMutableURLRequest alloc] init];
-//    
-//	[request setHTTPMethod:@"POST"];
-//    [request setCachePolicy:NSURLRequestReloadIgnoringLocalCacheData];
-//    [request setHTTPShouldHandleCookies:NO];
-//    [request setTimeoutInterval:30];
-//    
-//	NSString *boundary = [NSString stringWithString:@"---------------------------1473780983146649988274664132"];
-//	NSString *contentType = [NSString stringWithFormat:@"multipart/form-data; boundary=%@",boundary];
-//	[request addValue:contentType forHTTPHeaderField: @"Content-Type"];
-//	
-//	/*
-//	 now lets create the body of the post
-//     */
-//	NSMutableData *body = [NSMutableData data];
-//    
-//    [body appendData:[[NSString stringWithFormat:@"--%@\r\n", boundary] dataUsingEncoding:NSUTF8StringEncoding]];
-//    [body appendData:[[NSString stringWithFormat:@"Content-Disposition: form-data; name=\"action\"\r\n\r\nupdate\r\n"] dataUsingEncoding:NSUTF8StringEncoding]];
-//    
+-(NSString *)sendPush{
+    NSLog(@"sendPush");
+    
+//    NSString *jpegFilePath = [self saveImageWithUIImage:image];
+    //    [imageData writeToFile:@"uploadImage.jpeg" atomically:NO];
+	// setting up the URL to post to
+	NSString *urlString = @"http://api.usergrid.com/kwanghwi/sandbox/notifications\" -d";
+	
+	// setting up the request object now
+	NSMutableURLRequest *request = [[NSMutableURLRequest alloc] init];
+    
+	[request setHTTPMethod:@"POST"];
+    [request setCachePolicy:NSURLRequestReloadIgnoringLocalCacheData];
+    [request setHTTPShouldHandleCookies:NO];
+    [request setTimeoutInterval:30];
+    
+	NSString *boundary = [NSString stringWithString:@"---------------------------1473780983146649988274664132"];
+	NSString *contentType = [NSString stringWithFormat:@"multipart/form-data; boundary=%@",boundary];
+	[request addValue:contentType forHTTPHeaderField: @"Content-Type"];
+	
+	/*
+	 now lets create the body of the post
+     */
+	NSMutableData *body = [NSMutableData data];
+    
+    [body appendData:[[NSString stringWithFormat:@"--%@\r\n", boundary] dataUsingEncoding:NSUTF8StringEncoding]];
+    [body appendData:[[NSString stringWithFormat:@"Content-Disposition: form-data; name=\"payload\"\r\n\r\{{sears}:{Message from sears}}\r\n"] dataUsingEncoding:NSUTF8StringEncoding]];
+// \'{\"payloads\":{{\"sears\"}:{\"Message from sears\"}}}\'
 //    for(NSString *key in productDic){
 ////        [body appendData:[[NSString stringWithFormat:@"--%@\r\n", boundary] dataUsingEncoding:NSUTF8StringEncoding]];
 ////        [body appendData:[[NSString stringWithFormat:@"Content-Disposition: form-data; name=\"%@\"\r\n\r\n%@\r\n", key, [productArray objectForKey:key]  ] dataUsingEncoding:NSUTF8StringEncoding]];
 //        NSLog(@"Key: %@", key);
 //    }
 //    
-//	[body appendData:[[NSString stringWithFormat:@"\r\n--%@--",boundary] dataUsingEncoding:NSUTF8StringEncoding]];
-//	// setting the body of the post to the reqeust
-//	[request setHTTPBody:body];
-//    
-//    [request setURL:[NSURL URLWithString:urlString]];
-//	
-//	// now lets make the connection to the web
-////	NSData *returnData = [NSURLConnection sendSynchronousRequest:request returningResponse:nil error:nil];
-////	NSString *returnString = [[NSString alloc] initWithData:returnData encoding:NSUTF8StringEncoding];
-//	
-//    //	NSLog(@"Return: %@", returnString);
-//    return nil;
-////    return returnString;
-//}
+	[body appendData:[[NSString stringWithFormat:@"\r\n--%@--",boundary] dataUsingEncoding:NSUTF8StringEncoding]];
+	// setting the body of the post to the reqeust
+	[request setHTTPBody:body];
+    
+    [request setURL:[NSURL URLWithString:urlString]];
+	
+	// now lets make the connection to the web
+	NSData *returnData = [NSURLConnection sendSynchronousRequest:request returningResponse:nil error:nil];
+	NSString *returnString = [[NSString alloc] initWithData:returnData encoding:NSUTF8StringEncoding];
+	
+	NSLog(@"Return: %@", returnString);
+    return nil;
+//    return returnString;
+}
 #pragma mark - JSON Parsing
 
 -(NSArray *)parseJSONtoArray:(NSData *)data{
