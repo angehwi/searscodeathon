@@ -9,8 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "JSONKit.h"
 @interface SEARSHTTPModel : UICollectionViewCell
-+ (SEARSHTTPModel *)sharedHTTPModel;
-- (NSArray *)getList:(NSString *)order;
-- (NSDictionary *)getProductsWithKeyword:(NSString *)keyword;
-
++(SEARSHTTPModel *)sharedHTTPModel;
+-(NSArray *)getList:(NSString *)order;
+-(void)postPhoto:(UIImage *)image;
 @end

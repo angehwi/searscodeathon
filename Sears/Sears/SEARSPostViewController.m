@@ -7,6 +7,7 @@
 //
 
 #import "SEARSPostViewController.h"
+#import "SEARSHTTPModel.h"
 
 @interface SEARSPostViewController ()<UIImagePickerControllerDelegate>
 @property (weak, nonatomic) IBOutlet UITextField *titleText;
@@ -15,6 +16,7 @@
 
 @implementation SEARSPostViewController{
     UIImage *imageToPost;
+    SEARSHTTPModel *httpModel;
 }
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -31,6 +33,7 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
     [self callCamera];
+    httpModel = [SEARSHTTPModel sharedHTTPModel];
 }
 
 - (void)didReceiveMemoryWarning
@@ -43,7 +46,10 @@
 - (IBAction)handlePost:(id)sender {
     NSLog(@"handlePost");
     
+    
     NSLog(@"Title: %@", self.titleText.text);
+    
+    [httpModel postPhoto:imageToPost];
     
     [self.navigationController popViewControllerAnimated:YES];
 }
@@ -65,7 +71,8 @@
 }
 -(void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info{
     NSLog(@"Info Dictionary: %@", info);
-    self.postImageView.image = [info objectForKey:@"UIImagePickerControllerEditedImage"];
+    imageToPost = [info objectForKey:@"UIImagePickerControllerEditedImage"];
+    self.postImageView.image = imageToPost;
     [self.postImageView setContentMode:UIViewContentModeScaleAspectFit];
     
     [picker dismissViewControllerAnimated:YES completion:^{
@@ -75,7 +82,7 @@
 
 -(void)imagePickerControllerDidCancel:(UIImagePickerController *)picker{
     [picker dismissViewControllerAnimated:YES completion:^{
-        
+        [self.navigationController popViewControllerAnimated:NO];
     }];
 }
 

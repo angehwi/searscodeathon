@@ -23,18 +23,21 @@
 		913C981917C9768100EBC8F8 /* SEARSCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 913C981817C9768100EBC8F8 /* SEARSCollectionViewController.m */; };
 		913C981D17C9811300EBC8F8 /* JSONKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 913C981C17C97F6E00EBC8F8 /* JSONKit.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		9140FDB717C98A3500E75828 /* iPhoneStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9140FDB617C98A3500E75828 /* iPhoneStoryboard.storyboard */; };
+		9140FDC017C9E83200E75828 /* SEARSCollectionViewFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 9140FDBF17C9E83200E75828 /* SEARSCollectionViewFlowLayout.m */; };
+		9140FDC317C9F60600E75828 /* heart.png in Resources */ = {isa = PBXBuildFile; fileRef = 9140FDC217C9F60600E75828 /* heart.png */; };
+		9140FDC717C9FC3C00E75828 /* camera.png in Resources */ = {isa = PBXBuildFile; fileRef = 9140FDC617C9FC3C00E75828 /* camera.png */; };
+		9140FDD017CA03C600E75828 /* medal_1.png in Resources */ = {isa = PBXBuildFile; fileRef = 9140FDCB17CA03C600E75828 /* medal_1.png */; };
+		9140FDD117CA03C600E75828 /* medal_2.png in Resources */ = {isa = PBXBuildFile; fileRef = 9140FDCC17CA03C600E75828 /* medal_2.png */; };
+		9140FDD217CA03C600E75828 /* medal_3.png in Resources */ = {isa = PBXBuildFile; fileRef = 9140FDCD17CA03C600E75828 /* medal_3.png */; };
+		9140FDD317CA03C600E75828 /* medal_4.png in Resources */ = {isa = PBXBuildFile; fileRef = 9140FDCE17CA03C600E75828 /* medal_4.png */; };
+		9140FDD417CA03C600E75828 /* medal_5.png in Resources */ = {isa = PBXBuildFile; fileRef = 9140FDCF17CA03C600E75828 /* medal_5.png */; };
+		915CD95917C95BE5001AB978 /* ApigeeiOSSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 915CD95817C95BE5001AB978 /* ApigeeiOSSDK.framework */; };
 		915CD95C17C95E5A001AB978 /* SEARSPostViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 915CD95B17C95E5A001AB978 /* SEARSPostViewController.m */; };
 		915CD95E17C95FAC001AB978 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 915CD95D17C95FAC001AB978 /* CoreLocation.framework */; };
 		915CD96017C95FB2001AB978 /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 915CD95F17C95FB2001AB978 /* CoreTelephony.framework */; };
 		915CD96217C95FB9001AB978 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 915CD96117C95FB9001AB978 /* Security.framework */; };
 		915CD96417C95FC2001AB978 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 915CD96317C95FC2001AB978 /* SystemConfiguration.framework */; };
 		916E678A17C94DC0005E890B /* SEARSViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 916E678917C94DC0005E890B /* SEARSViewController.m */; };
-		E5D7D43117C992590055B7F9 /* SEARSDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E5D7D43017C992590055B7F9 /* SEARSDetailViewController.m */; };
-		E5D7D43317C992870055B7F9 /* SDWebImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E5D7D43217C992870055B7F9 /* SDWebImage.framework */; };
-		E5D7D43517C992950055B7F9 /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E5D7D43417C992950055B7F9 /* ImageIO.framework */; };
-		E5D7D43717C9A6300055B7F9 /* sears.png in Resources */ = {isa = PBXBuildFile; fileRef = E5D7D43617C9A6300055B7F9 /* sears.png */; };
-		E5D7D43B17C9A7DA0055B7F9 /* SEARSCatalogueViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E5D7D43A17C9A7DA0055B7F9 /* SEARSCatalogueViewController.m */; };
-		E5D7D44417C9ECE50055B7F9 /* SEARSProductCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E5D7D44317C9ECE50055B7F9 /* SEARSProductCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -62,6 +65,16 @@
 		913C981B17C97F6E00EBC8F8 /* JSONKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JSONKit.h; sourceTree = "<group>"; };
 		913C981C17C97F6E00EBC8F8 /* JSONKit.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JSONKit.m; sourceTree = "<group>"; };
 		9140FDB617C98A3500E75828 /* iPhoneStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = iPhoneStoryboard.storyboard; sourceTree = "<group>"; };
+		9140FDBE17C9E83200E75828 /* SEARSCollectionViewFlowLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SEARSCollectionViewFlowLayout.h; sourceTree = "<group>"; };
+		9140FDBF17C9E83200E75828 /* SEARSCollectionViewFlowLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SEARSCollectionViewFlowLayout.m; sourceTree = "<group>"; };
+		9140FDC217C9F60600E75828 /* heart.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = heart.png; sourceTree = "<group>"; };
+		9140FDC617C9FC3C00E75828 /* camera.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = camera.png; sourceTree = "<group>"; };
+		9140FDCB17CA03C600E75828 /* medal_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = medal_1.png; sourceTree = "<group>"; };
+		9140FDCC17CA03C600E75828 /* medal_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = medal_2.png; sourceTree = "<group>"; };
+		9140FDCD17CA03C600E75828 /* medal_3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = medal_3.png; sourceTree = "<group>"; };
+		9140FDCE17CA03C600E75828 /* medal_4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = medal_4.png; sourceTree = "<group>"; };
+		9140FDCF17CA03C600E75828 /* medal_5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = medal_5.png; sourceTree = "<group>"; };
+		915CD95817C95BE5001AB978 /* ApigeeiOSSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ApigeeiOSSDK.framework; path = "../../../Downloads/apigee-ios-sdk-2.0.0/bin/ApigeeiOSSDK.framework"; sourceTree = "<group>"; };
 		915CD95A17C95E5A001AB978 /* SEARSPostViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SEARSPostViewController.h; sourceTree = "<group>"; };
 		915CD95B17C95E5A001AB978 /* SEARSPostViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SEARSPostViewController.m; sourceTree = "<group>"; };
 		915CD95D17C95FAC001AB978 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
@@ -70,15 +83,6 @@
 		915CD96317C95FC2001AB978 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		916E678817C94DC0005E890B /* SEARSViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SEARSViewController.h; sourceTree = "<group>"; };
 		916E678917C94DC0005E890B /* SEARSViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SEARSViewController.m; sourceTree = "<group>"; };
-		E5D7D42F17C992590055B7F9 /* SEARSDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SEARSDetailViewController.h; sourceTree = "<group>"; };
-		E5D7D43017C992590055B7F9 /* SEARSDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SEARSDetailViewController.m; sourceTree = "<group>"; };
-		E5D7D43217C992870055B7F9 /* SDWebImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SDWebImage.framework; sourceTree = "<group>"; };
-		E5D7D43417C992950055B7F9 /* ImageIO.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ImageIO.framework; path = System/Library/Frameworks/ImageIO.framework; sourceTree = SDKROOT; };
-		E5D7D43617C9A6300055B7F9 /* sears.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sears.png; sourceTree = "<group>"; };
-		E5D7D43917C9A7DA0055B7F9 /* SEARSCatalogueViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SEARSCatalogueViewController.h; sourceTree = "<group>"; };
-		E5D7D43A17C9A7DA0055B7F9 /* SEARSCatalogueViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SEARSCatalogueViewController.m; sourceTree = "<group>"; };
-		E5D7D44217C9ECE50055B7F9 /* SEARSProductCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SEARSProductCell.h; sourceTree = "<group>"; };
-		E5D7D44317C9ECE50055B7F9 /* SEARSProductCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SEARSProductCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,7 +90,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E5D7D43517C992950055B7F9 /* ImageIO.framework in Frameworks */,
 				915CD96417C95FC2001AB978 /* SystemConfiguration.framework in Frameworks */,
 				915CD96217C95FB9001AB978 /* Security.framework in Frameworks */,
 				915CD96017C95FB2001AB978 /* CoreTelephony.framework in Frameworks */,
@@ -95,7 +98,7 @@
 				9126FA0617C94CF000CF4F25 /* UIKit.framework in Frameworks */,
 				9126FA0817C94CF000CF4F25 /* Foundation.framework in Frameworks */,
 				9126FA0C17C94CF000CF4F25 /* CoreData.framework in Frameworks */,
-				E5D7D43317C992870055B7F9 /* SDWebImage.framework in Frameworks */,
+				915CD95917C95BE5001AB978 /* ApigeeiOSSDK.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -105,7 +108,6 @@
 		9126F9F917C94CF000CF4F25 = {
 			isa = PBXGroup;
 			children = (
-				E5D7D43417C992950055B7F9 /* ImageIO.framework */,
 				9126FA0D17C94CF000CF4F25 /* Sears */,
 				9126FA0417C94CF000CF4F25 /* Frameworks */,
 				9126FA0317C94CF000CF4F25 /* Products */,
@@ -123,11 +125,11 @@
 		9126FA0417C94CF000CF4F25 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				E5D7D43217C992870055B7F9 /* SDWebImage.framework */,
 				915CD96317C95FC2001AB978 /* SystemConfiguration.framework */,
 				915CD96117C95FB9001AB978 /* Security.framework */,
 				915CD95F17C95FB2001AB978 /* CoreTelephony.framework */,
 				915CD95D17C95FAC001AB978 /* CoreLocation.framework */,
+				915CD95817C95BE5001AB978 /* ApigeeiOSSDK.framework */,
 				9126FA0517C94CF000CF4F25 /* UIKit.framework */,
 				9126FA0717C94CF000CF4F25 /* Foundation.framework */,
 				9126FA0917C94CF000CF4F25 /* CoreGraphics.framework */,
@@ -139,15 +141,13 @@
 		9126FA0D17C94CF000CF4F25 /* Sears */ = {
 			isa = PBXGroup;
 			children = (
+				9140FDC117C9F5FB00E75828 /* ImageResources */,
 				913C981A17C97F6500EBC8F8 /* JSONKit */,
 				915CD96B17C96898001AB978 /* MainViewController */,
-				E5D7D42E17C992100055B7F9 /* DetailViewController */,
-				E5D7D43817C9A7B50055B7F9 /* CatalogueViewController */,
 				915CD96817C9643D001AB978 /* Models */,
 				9126FA1617C94CF000CF4F25 /* SEARSAppDelegate.h */,
 				9126FA1717C94CF000CF4F25 /* SEARSAppDelegate.m */,
 				9126FA1F17C94CF000CF4F25 /* Sears.xcdatamodeld */,
-				E5D7D43617C9A6300055B7F9 /* sears.png */,
 				9140FDB617C98A3500E75828 /* iPhoneStoryboard.storyboard */,
 				9126FA0E17C94CF000CF4F25 /* Supporting Files */,
 			);
@@ -175,6 +175,20 @@
 				913C981C17C97F6E00EBC8F8 /* JSONKit.m */,
 			);
 			name = JSONKit;
+			sourceTree = "<group>";
+		};
+		9140FDC117C9F5FB00E75828 /* ImageResources */ = {
+			isa = PBXGroup;
+			children = (
+				9140FDCB17CA03C600E75828 /* medal_1.png */,
+				9140FDCC17CA03C600E75828 /* medal_2.png */,
+				9140FDCD17CA03C600E75828 /* medal_3.png */,
+				9140FDCE17CA03C600E75828 /* medal_4.png */,
+				9140FDCF17CA03C600E75828 /* medal_5.png */,
+				9140FDC617C9FC3C00E75828 /* camera.png */,
+				9140FDC217C9F60600E75828 /* heart.png */,
+			);
+			name = ImageResources;
 			sourceTree = "<group>";
 		};
 		915CD96817C9643D001AB978 /* Models */ = {
@@ -205,28 +219,10 @@
 				913C981217C96FF200EBC8F8 /* SEARSCollectionViewCell.m */,
 				913C981717C9768100EBC8F8 /* SEARSCollectionViewController.h */,
 				913C981817C9768100EBC8F8 /* SEARSCollectionViewController.m */,
+				9140FDBE17C9E83200E75828 /* SEARSCollectionViewFlowLayout.h */,
+				9140FDBF17C9E83200E75828 /* SEARSCollectionViewFlowLayout.m */,
 			);
 			name = CollectionViewController;
-			sourceTree = "<group>";
-		};
-		E5D7D42E17C992100055B7F9 /* DetailViewController */ = {
-			isa = PBXGroup;
-			children = (
-				E5D7D42F17C992590055B7F9 /* SEARSDetailViewController.h */,
-				E5D7D43017C992590055B7F9 /* SEARSDetailViewController.m */,
-			);
-			name = DetailViewController;
-			sourceTree = "<group>";
-		};
-		E5D7D43817C9A7B50055B7F9 /* CatalogueViewController */ = {
-			isa = PBXGroup;
-			children = (
-				E5D7D43917C9A7DA0055B7F9 /* SEARSCatalogueViewController.h */,
-				E5D7D43A17C9A7DA0055B7F9 /* SEARSCatalogueViewController.m */,
-				E5D7D44217C9ECE50055B7F9 /* SEARSProductCell.h */,
-				E5D7D44317C9ECE50055B7F9 /* SEARSProductCell.m */,
-			);
-			name = CatalogueViewController;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -286,7 +282,13 @@
 				9126FA1C17C94CF000CF4F25 /* Default@2x.png in Resources */,
 				9126FA1E17C94CF000CF4F25 /* Default-568h@2x.png in Resources */,
 				9140FDB717C98A3500E75828 /* iPhoneStoryboard.storyboard in Resources */,
-				E5D7D43717C9A6300055B7F9 /* sears.png in Resources */,
+				9140FDC317C9F60600E75828 /* heart.png in Resources */,
+				9140FDC717C9FC3C00E75828 /* camera.png in Resources */,
+				9140FDD017CA03C600E75828 /* medal_1.png in Resources */,
+				9140FDD117CA03C600E75828 /* medal_2.png in Resources */,
+				9140FDD217CA03C600E75828 /* medal_3.png in Resources */,
+				9140FDD317CA03C600E75828 /* medal_4.png in Resources */,
+				9140FDD417CA03C600E75828 /* medal_5.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -306,9 +308,7 @@
 				913C981317C96FF200EBC8F8 /* SEARSCollectionViewCell.m in Sources */,
 				913C981617C9732400EBC8F8 /* SEARSHTTPModel.m in Sources */,
 				913C981917C9768100EBC8F8 /* SEARSCollectionViewController.m in Sources */,
-				E5D7D43117C992590055B7F9 /* SEARSDetailViewController.m in Sources */,
-				E5D7D43B17C9A7DA0055B7F9 /* SEARSCatalogueViewController.m in Sources */,
-				E5D7D44417C9ECE50055B7F9 /* SEARSProductCell.m in Sources */,
+				9140FDC017C9E83200E75828 /* SEARSCollectionViewFlowLayout.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -388,12 +388,10 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/../../../Downloads/apigee-ios-sdk-2.0.0/bin\"",
-					"\"$(SRCROOT)\"",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Sears/Sears-Prefix.pch";
 				INFOPLIST_FILE = "Sears/Sears-Info.plist";
-				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -405,12 +403,10 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/../../../Downloads/apigee-ios-sdk-2.0.0/bin\"",
-					"\"$(SRCROOT)\"",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Sears/Sears-Prefix.pch";
 				INFOPLIST_FILE = "Sears/Sears-Info.plist";
-				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
