@@ -222,7 +222,6 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Hun-BS-sHy">
                                 <constraints>
                                     <constraint firstAttribute="height" constant="320" id="h4P-Wu-UKO"/>
-                                    <constraint firstAttribute="width" constant="320" id="nos-pe-ZWc"/>
                                 </constraints>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BFx-1A-j4R">
@@ -305,15 +304,16 @@
                             </view>
                         </subviews>
                         <constraints>
-                            <constraint firstItem="Hun-BS-sHy" firstAttribute="leading" secondItem="698-eI-cX8" secondAttribute="leading" constant="-1" id="9Yb-GL-6UJ"/>
                             <constraint firstItem="BFx-1A-j4R" firstAttribute="top" secondItem="Hun-BS-sHy" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="ITK-M3-7BD"/>
                             <constraint firstItem="BFx-1A-j4R" firstAttribute="leading" secondItem="698-eI-cX8" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="QL4-Gx-1N3"/>
+                            <constraint firstItem="Hun-BS-sHy" firstAttribute="leading" secondItem="698-eI-cX8" secondAttribute="leading" type="default" id="Sap-6z-IJo"/>
                             <constraint firstItem="Hun-BS-sHy" firstAttribute="top" secondItem="698-eI-cX8" secondAttribute="top" type="default" id="Ukb-cG-gAf"/>
                             <constraint firstItem="6KV-mn-zJn" firstAttribute="top" secondItem="BFx-1A-j4R" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="azy-5O-fGA"/>
                             <constraint firstAttribute="bottom" secondItem="BFx-1A-j4R" secondAttribute="bottom" constant="45" id="c8c-Mb-SU0"/>
                             <constraint firstItem="6KV-mn-zJn" firstAttribute="trailing" secondItem="698-eI-cX8" secondAttribute="trailing" type="default" id="nyy-uK-tbs"/>
                             <constraint firstAttribute="trailing" secondItem="BFx-1A-j4R" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="pg0-Ay-gqV"/>
                             <constraint firstItem="6KV-mn-zJn" firstAttribute="leading" secondItem="698-eI-cX8" secondAttribute="leading" type="default" id="rpV-D1-Ozh"/>
+                            <constraint firstItem="Hun-BS-sHy" firstAttribute="trailing" secondItem="698-eI-cX8" secondAttribute="trailing" type="default" id="sRF-lx-iyG"/>
                             <constraint firstItem="BFx-1A-j4R" firstAttribute="centerX" secondItem="698-eI-cX8" secondAttribute="centerX" type="default" id="wRw-2k-R7O"/>
                         </constraints>
                         <connections>
@@ -447,6 +447,78 @@
         <image name="camera.png" width="30" height="30"/>
         <image name="heart.png" width="80" height="69"/>
     </resources>
+    <classes>
+        <class className="NSLayoutConstraint" superclassName="NSObject">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
+        </class>
+        <class className="SEARSCatalogueViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/SEARSCatalogueViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="productTableView" candidateClass="UITableView"/>
+            </relationships>
+        </class>
+        <class className="SEARSCollectionViewCell" superclassName="UICollectionViewCell">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/SEARSCollectionViewCell.h"/>
+            <relationships>
+                <relationship kind="outlet" name="heart" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="likesLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="productPhoto" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="store_name" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+        <class className="SEARSCollectionViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/SEARSCollectionViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="collectionView" candidateClass="UICollectionView"/>
+            </relationships>
+        </class>
+        <class className="SEARSDetailViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/SEARSDetailViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="addDetailButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="contentScrollView" candidateClass="UIScrollView"/>
+                <relationship kind="outlet" name="detailInfoView" candidateClass="UIView"/>
+                <relationship kind="outlet" name="likeDate" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="photoView" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="productName" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="productPrice" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="store" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+        <class className="SEARSPostViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/SEARSPostViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="handlePost:"/>
+                <relationship kind="outlet" name="postImageView" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="titleText" candidateClass="UITextField"/>
+            </relationships>
+        </class>
+        <class className="SEARSProductCell" superclassName="UITableViewCell">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/SEARSProductCell.h"/>
+            <relationships>
+                <relationship kind="outlet" name="productImage" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="productName" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+        <class className="SEARSViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/SEARSViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="collectionViewContainer" candidateClass="UIView"/>
+            </relationships>
+        </class>
+        <class className="UICollectionReusableView" superclassName="UIView">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/UICollectionReusableView.h"/>
+        </class>
+        <class className="UICollectionViewCell" superclassName="UICollectionReusableView">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/UICollectionViewCell.h"/>
+        </class>
+        <class className="UICollectionViewFlowLayout" superclassName="UICollectionViewLayout">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/UICollectionViewFlowLayout.h"/>
+        </class>
+        <class className="UICollectionViewLayout" superclassName="NSObject">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/UICollectionViewLayout.h"/>
+        </class>
+    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

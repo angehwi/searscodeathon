@@ -33,8 +33,8 @@
     
     [self.contentScrollView setDelegate:self]; 
     [self.contentScrollView setScrollEnabled:YES];
-    [self.contentScrollView setContentSize:CGSizeMake(320, self.photoView.frame.size.height + self.addDetailButton.frame.size.height + self.detailInfoView.frame.size.height )];
-    
+//    [self.contentScrollView setContentSize:CGSizeMake(self.view.frame.size.width, self.photoView.frame.size.height + self.addDetailButton.frame.size.height + self.detailInfoView.frame.size.height )];
+//    NSLog(@"ContentSize: %@", NSStringFromCGSize(self.contentScrollView.contentSize));
     [self.detailInfoView setAlpha:0.0];
      // TODO: dict받은 뒤 주석 해제하기. 
 //    [_photoView setImageWithURL:[NSURL URLWithString: [_dict objectForKey:@"id"]]
@@ -42,7 +42,10 @@
     [_photoView setImageWithURL:[NSURL URLWithString: [NSString stringWithFormat: @"http://talkloud.com/_sears/uploads/photo_%@.jpg", [self.dict objectForKey:@"prod_id"]]] placeholderImage:[UIImage imageNamed:@"placeholder.png"]];
     
 }
-
+-(void)viewDidLayoutSubviews{
+    [self.contentScrollView setContentSize:CGSizeMake(self.view.frame.size.width, self.photoView.frame.size.height + self.addDetailButton.frame.size.height + self.detailInfoView.frame.size.height )];
+    NSLog(@"ContentSize: %@", NSStringFromCGSize(self.contentScrollView.contentSize));    
+}
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
@@ -61,9 +64,25 @@
 }
 
 - (void)addDetailInformation:(NSDictionary *)info{
+    
+    
+    
     self.productName.text = [[info objectForKey:@"Description"] objectForKey:@"Name"];
+//    self.productImage =  [[info objectForKey:@"Description"] objectForKey:@"ImageURL"];
     self.productPrice.text  = [[info objectForKey:@"Price"] objectForKey:@"DisplayPrice"];
+    self.store.text = [self.dict objectForKey:@"store_name"];
+    self.likeDate.text = @"";
+    [self.detailInfoView setAlpha:1.0];
 }
+-(NSDictionary *)extractProductInfo:(NSDictionary *)productDic{
+    NSMutableDictionary *newDictionary = [NSMutableDictionary dictionary];
+    
+//    newDictionary setObject:[productDic objectForKey:@"Id"] forKey:Sear
+    
+    return newDictionary;
+    
+}
+
 
 
 @end

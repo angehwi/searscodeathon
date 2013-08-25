@@ -14,6 +14,7 @@
 
 @interface SEARSCatalogueViewController () <UITableViewDelegate, UITableViewDataSource> {
     NSMutableArray *products;
+    SEARSHTTPModel *httpModel;
 }
 
 @end
@@ -32,7 +33,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    SEARSHTTPModel *httpModel = [SEARSHTTPModel sharedHTTPModel];
+    httpModel = [SEARSHTTPModel sharedHTTPModel];
     NSDictionary *searchResults = [httpModel getProductsWithKeyword:@"hello"];
     products = [[searchResults objectForKey:@"SearchResults"] objectForKey:@"Products"];
     [self.productTableView reloadData];
@@ -68,8 +69,10 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     NSDictionary *productDict = [products objectAtIndex:indexPath.row];
     [_delegate addDetailInformation:productDict];
+
     [[self navigationController] popViewControllerAnimated:NO];
 }
+
 
 
 

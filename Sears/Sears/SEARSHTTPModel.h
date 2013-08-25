@@ -13,5 +13,5 @@
 -(NSArray *)getList:(NSString *)order;
 -(void)postPhoto:(UIImage *)image;
 - (NSDictionary *)getProductsWithKeyword:(NSString *)keyword;
-
+-(void)updateProduct:(NSDictionary *)productDic;
 @end
