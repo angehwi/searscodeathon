@@ -96,12 +96,12 @@
     [photoQueue addOperationWithBlock:^{
         NSString *photoID = [cellDictionary objectForKey:@"prod_id"];
         NSString *photoURLString = [NSString stringWithFormat: @"http://talkloud.com/_sears/uploads/photo_%@.jpg", photoID];
-        NSURL *photoURL = [NSURL URLWithString:photoURLString];
-        NSData *photoData = [NSData dataWithContentsOfURL:photoURL];
-        UIImage *photoImage = [UIImage imageWithData:photoData];
-        cell.productPhoto.image = photoImage;
- 
-//        [cell.productPhoto setImageWithURL:[NSURL URLWithString: @"http://talkloud.com/_sears/uploads/photo_1.jpg"]];
+//        NSURL *photoURL = [NSURL URLWithString:photoURLString];
+//        NSData *photoData = [NSData dataWithContentsOfURL:photoURL];
+//        UIImage *photoImage = [UIImage imageWithData:photoData];
+//        cell.productPhoto.image = photoImage;
+// 
+       [cell.productPhoto setImageWithURL:[NSURL URLWithString: photoURLString]];
 //
         [cell.productPhoto setContentMode:UIViewContentModeScaleAspectFit];
         
