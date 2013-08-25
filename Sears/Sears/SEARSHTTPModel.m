@@ -100,6 +100,23 @@ static SEARSHTTPModel *instance;
 //
 
 #pragma mark - setters
+-(void)likeWithProductID:(NSString *)productID{
+    [self likeToServerWithProductID:productID];
+//    NSArray *result = [self parseJSONtoArray:data];
+}
+-(NSData *)likeToServerWithProductID:(NSString *)productID{
+    NSString *urlString = [NSString stringWithFormat:@"http://talkloud.com/_sears/app.php?action=like&prod_id=%@", productID];
+    
+    //    NSLog(@"URLString: %@", urlString);
+    urlString = [urlString stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+    NSURL *url = [NSURL URLWithString:urlString];
+    NSData *data= [NSData dataWithContentsOfURL:url];
+    
+    
+    
+    return data;
+}
+
 
 -(void)postPhoto:(UIImage *)image{
     NSLog(@"PostPhoto");

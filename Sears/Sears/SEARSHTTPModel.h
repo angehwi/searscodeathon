@@ -15,4 +15,5 @@
 - (NSDictionary *)getProductsWithKeyword:(NSString *)keyword;
 -(void)updateProduct:(NSDictionary *)productDic;
 -(NSDictionary *)getProductWithProductID:(NSString *)productID;
+-(void)likeWithProductID:(NSString *)productID;
 @end

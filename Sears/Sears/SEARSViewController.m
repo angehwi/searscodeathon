@@ -45,7 +45,7 @@
     CGFloat blue = 0.6117;
     UIColor *customColor = [UIColor colorWithRed:red green:green blue:blue alpha:1.0];
     self.navigationController.navigationBar.tintColor = customColor;
-    
+//    self.navigationController.title = ;
 }
 
 -(void)setCameraButton{

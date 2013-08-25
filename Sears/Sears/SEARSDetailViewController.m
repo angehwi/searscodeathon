@@ -48,16 +48,21 @@
     self.dict =  [httpModel getProductWithProductID:[self.dict objectForKey:@"prod_id"]];
     if([@"" isEqualToString:[self.dict objectForKey:@"sears_id"]]){
         NSLog(@"Detail Infomation");
-        [self.detailInfoView setAlpha:0.0];
+//        [self.detailInfoView setAlpha:0.0];
     }else{
         [self showDetailInfos];
     }
 }
 
 -(void)showDetailInfos{
+//    [self.likeButton.titleLabel setFrame:CGRectMake(5, self.likeButton.titleLabel.frame.origin.y, 150, self.likeButton.titleLabel.frame.size.height)];
+
+    self.likeLabel.text = [self.dict objectForKey:@"num_like"];
+
+    
     NSString *titleString =[self.dict objectForKey:@"title"];
     titleString = [titleString stringByReplacingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
-    UILabel *productName = [[UILabel alloc]initWithFrame:CGRectMake(5,5, 300, 20)];
+    UILabel *productName = [[UILabel alloc]initWithFrame:CGRectMake(5,50, 300, 20)];
     productName.text = titleString;
     [self.detailInfoView addSubview:productName];
     
@@ -69,17 +74,17 @@
     [self.searsPhotoView setImageWithURL:searsPhotoURL];
     [self.searsPhotoView setContentMode:UIViewContentModeScaleAspectFit];
 
-    UILabel *productPrice =[[UILabel alloc]initWithFrame:CGRectMake(5,30, 300, 20)];
+    UILabel *productPrice =[[UILabel alloc]initWithFrame:CGRectMake(5,75, 300, 20)];
     NSMutableString *priceString = [[NSMutableString alloc] initWithFormat:@"%@",[self.dict objectForKey:@"price"]];
     [priceString insertString:@"." atIndex:[priceString length]-2];
     productPrice.text  = [NSString stringWithFormat:@"Price: $ %@", priceString];
     [self.detailInfoView addSubview:productPrice];
 
-    UILabel *store = [[UILabel alloc] initWithFrame:CGRectMake(5, 55, 300, 20)];
+    UILabel *store = [[UILabel alloc] initWithFrame:CGRectMake(5, 100, 300, 20)];
     store.text = [NSString stringWithFormat:@"Store: %@", [self.dict objectForKey:@"store_name"]];
     [self.detailInfoView addSubview:store];
 
-    UILabel *shipping = [[UILabel alloc] initWithFrame:CGRectMake(5, 80, 300, 20)];
+    UILabel *shipping = [[UILabel alloc] initWithFrame:CGRectMake(5, 125, 300, 20)];
     shipping.text = @"Shipping: Free shipping";
     [self.detailInfoView addSubview:shipping];
     
@@ -100,6 +105,15 @@
         SEARSCatalogueViewController *catalogueVC = (SEARSCatalogueViewController *)segue.destinationViewController;
         catalogueVC.delegate = self;
     }
+}
+- (IBAction)handleLike:(id)sender {
+    NSLog(@"handleLike");
+    [httpModel likeWithProductID:[self.dict objectForKey:@"prod_id"]];
+    NSLog(@"Before: %@", self.dict);
+    self.dict =  [httpModel getProductWithProductID:[self.dict objectForKey:@"prod_id"]];
+    NSLog(@"After: %@", self.dict);
+    self.likeLabel.text = [self.dict objectForKey:@"num_like"];
+
 }
 
 -(UIView *)viewForZoomingInScrollView:(UIScrollView *)scrollView{
