@@ -13,13 +13,11 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <containerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ly1-I0-Ngb">
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                 <connections>
                                     <segue destination="Bc4-Tr-0Ms" kind="embed" id="pKi-id-BSx"/>
                                 </connections>
                             </containerView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="Ly1-I0-Ngb" firstAttribute="trailing" secondItem="Yez-oG-QmF" secondAttribute="trailing" type="default" id="Khx-tJ-P6G"/>
                             <constraint firstItem="Ly1-I0-Ngb" firstAttribute="top" secondItem="Yez-oG-QmF" secondAttribute="top" type="default" id="LwO-kQ-GOi"/>
@@ -28,7 +26,7 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="2nh-HM-v68">
-                        <barButtonItem key="rightBarButtonItem" systemItem="camera" id="aPM-ve-e8v">
+                        <barButtonItem key="rightBarButtonItem" image="camera.png" id="aPM-ve-e8v">
                             <connections>
                                 <segue destination="qbX-yH-Onq" kind="push" id="gp2-0Q-aSY"/>
                             </connections>
@@ -45,7 +43,7 @@
         <!--Post View Controller-->
         <scene sceneID="JAP-bQ-Abq">
             <objects>
-                <viewController id="qbX-yH-Onq" customClass="SEARSPostViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="POST_VC" id="qbX-yH-Onq" customClass="SEARSPostViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="67h-RP-tme">
                         <rect key="frame" x="0.0" y="64" width="320" height="416"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -131,23 +129,25 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="416"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <collectionView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" minimumZoomScale="0.0" maximumZoomScale="0.0" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="KsJ-5d-29a">
+                            <collectionView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" indicatorStyle="white" minimumZoomScale="0.0" maximumZoomScale="0.0" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="KsJ-5d-29a">
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="LkE-IR-lPt">
-                                    <size key="itemSize" width="64" height="64"/>
+                                    <size key="itemSize" width="255" height="255"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="PHOTO_CELL" id="YCv-I7-BSd" customClass="SEARSCollectionViewCell">
-                                        <rect key="frame" x="0.0" y="0.0" width="64" height="64"/>
+                                        <rect key="frame" x="32" y="0.0" width="255" height="255"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="0.0" y="0.0" width="64" height="64"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="255" height="255"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="H2B-1I-72K"/>
-                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hau-tv-A8D">
+                                                <label hidden="YES" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hau-tv-A8D" userLabel="TitleLabel">
+                                                    <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="21" id="7oh-wG-FJC"/>
                                                     </constraints>
@@ -155,19 +155,38 @@
                                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" image="heart.png" translatesAutoresizingMaskIntoConstraints="NO" id="Gyt-me-Nca">
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="21" id="VUw-Rf-m6g"/>
+                                                        <constraint firstAttribute="width" constant="21" id="qH3-1t-H2A"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TQl-g1-IEu" userLabel="HeartLabel">
+                                                    <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
                                         <constraints>
-                                            <constraint firstItem="H2B-1I-72K" firstAttribute="leading" secondItem="YCv-I7-BSd" secondAttribute="leading" type="default" id="2mP-1a-dgT"/>
-                                            <constraint firstItem="hau-tv-A8D" firstAttribute="trailing" secondItem="YCv-I7-BSd" secondAttribute="trailing" type="default" id="3EY-KQ-ZMF"/>
-                                            <constraint firstItem="hau-tv-A8D" firstAttribute="leading" secondItem="YCv-I7-BSd" secondAttribute="leading" type="default" id="6cp-uN-ddj"/>
-                                            <constraint firstItem="H2B-1I-72K" firstAttribute="bottom" secondItem="YCv-I7-BSd" secondAttribute="bottom" type="default" id="9zD-2k-DQg"/>
-                                            <constraint firstItem="hau-tv-A8D" firstAttribute="bottom" secondItem="YCv-I7-BSd" secondAttribute="bottom" type="default" id="Uwq-mF-YLd"/>
-                                            <constraint firstItem="H2B-1I-72K" firstAttribute="top" secondItem="YCv-I7-BSd" secondAttribute="top" type="default" id="fbN-he-6GB"/>
-                                            <constraint firstItem="H2B-1I-72K" firstAttribute="trailing" secondItem="YCv-I7-BSd" secondAttribute="trailing" type="default" id="nYO-QP-dO2"/>
+                                            <constraint firstAttribute="trailing" secondItem="Gyt-me-Nca" secondAttribute="trailing" constant="4" id="1dI-6J-0Gk"/>
+                                            <constraint firstItem="Gyt-me-Nca" firstAttribute="centerX" secondItem="TQl-g1-IEu" secondAttribute="centerX" type="default" id="4AM-Tl-g0M"/>
+                                            <constraint firstItem="H2B-1I-72K" firstAttribute="bottom" secondItem="YCv-I7-BSd" secondAttribute="bottom" type="default" id="4rV-1D-LZT"/>
+                                            <constraint firstItem="TQl-g1-IEu" firstAttribute="trailing" secondItem="YCv-I7-BSd" secondAttribute="trailing" type="default" id="5AM-69-KJQ"/>
+                                            <constraint firstItem="hau-tv-A8D" firstAttribute="trailing" secondItem="YCv-I7-BSd" secondAttribute="trailing" type="default" id="7i9-eD-922"/>
+                                            <constraint firstItem="hau-tv-A8D" firstAttribute="bottom" secondItem="YCv-I7-BSd" secondAttribute="bottom" type="default" id="AEn-wi-SOo"/>
+                                            <constraint firstItem="H2B-1I-72K" firstAttribute="top" secondItem="YCv-I7-BSd" secondAttribute="top" type="default" id="Gll-tW-ngn"/>
+                                            <constraint firstItem="TQl-g1-IEu" firstAttribute="top" secondItem="Gyt-me-Nca" secondAttribute="top" type="default" id="NlG-Rf-mjF"/>
+                                            <constraint firstItem="TQl-g1-IEu" firstAttribute="bottom" secondItem="Gyt-me-Nca" secondAttribute="bottom" type="default" id="OwD-qY-1lx"/>
+                                            <constraint firstItem="Gyt-me-Nca" firstAttribute="top" secondItem="YCv-I7-BSd" secondAttribute="top" constant="6" id="ei2-eh-Mbi"/>
+                                            <constraint firstItem="H2B-1I-72K" firstAttribute="leading" secondItem="YCv-I7-BSd" secondAttribute="leading" type="default" id="kRP-d8-LyQ"/>
+                                            <constraint firstItem="hau-tv-A8D" firstAttribute="leading" secondItem="YCv-I7-BSd" secondAttribute="leading" type="default" id="qJ7-E1-P3P"/>
+                                            <constraint firstItem="H2B-1I-72K" firstAttribute="trailing" secondItem="YCv-I7-BSd" secondAttribute="trailing" type="default" id="s9S-Vw-R4W"/>
                                         </constraints>
                                         <connections>
+                                            <outlet property="heart" destination="Gyt-me-Nca" id="Idq-9y-Swb"/>
+                                            <outlet property="likesLabel" destination="TQl-g1-IEu" id="hZh-EO-gzH"/>
                                             <outlet property="productPhoto" destination="H2B-1I-72K" id="Tbx-Hq-8px"/>
                                             <outlet property="store_name" destination="hau-tv-A8D" id="IBc-88-m0C"/>
                                         </connections>
@@ -175,7 +194,6 @@
                                 </cells>
                             </collectionView>
                         </subviews>
-                        <color key="backgroundColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="KsJ-5d-29a" firstAttribute="top" secondItem="2Wa-Xz-uVt" secondAttribute="top" type="default" id="Kqq-8k-Ixt"/>
                             <constraint firstItem="KsJ-5d-29a" firstAttribute="leading" secondItem="2Wa-Xz-uVt" secondAttribute="leading" type="default" id="Nmx-U9-hbE"/>
@@ -193,6 +211,10 @@
             <point key="canvasLocation" x="993" y="-654"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="camera.png" width="30" height="30"/>
+        <image name="heart.png" width="80" height="69"/>
+    </resources>
     <classes>
         <class className="NSLayoutConstraint" superclassName="NSObject">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
@@ -200,8 +222,10 @@
         <class className="SEARSCollectionViewCell" superclassName="UICollectionViewCell">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/SEARSCollectionViewCell.h"/>
             <relationships>
-                <relationship kind="outlet" name="createdDate" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="heart" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="likesLabel" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="productPhoto" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="store_name" candidateClass="UILabel"/>
             </relationships>
         </class>
         <class className="SEARSCollectionViewController" superclassName="UIViewController">

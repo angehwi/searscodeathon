@@ -12,4 +12,8 @@
 @property (weak, nonatomic) IBOutlet UILabel *store_name;
 @property (weak, nonatomic) IBOutlet UIImageView *productPhoto;
 //@property (nonatomic, copy) NSString *displayString;
+@property (weak, nonatomic) IBOutlet UILabel *likesLabel;
+@property (weak, nonatomic) IBOutlet UIImageView *heart;
+@property (strong, nonatomic) UIImageView *medalImageView;
+-(void)backGroundColor;
 @end

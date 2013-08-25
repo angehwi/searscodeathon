@@ -40,8 +40,8 @@
     
     
     self.collectionView.dataSource = self;
-    photoQueue = [NSOperationQueue new];
-    
+    photoQueue = [[NSOperationQueue alloc] init];
+//    photoQueue.MaxConcurrentOperationCount = NSOperationQueueDefaultMaxConcurrentOperationCount;
     [self collectionViewStyle];
     
 }
@@ -92,9 +92,6 @@
     SEARSCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"PHOTO_CELL" forIndexPath:indexPath];
     
     NSDictionary *cellDictionary = [listArray objectAtIndex:indexPath.row];
-    
-    cell.store_name.text  = [cellDictionary objectForKey:@"store_name"];
-    
     [photoQueue addOperationWithBlock:^{
         NSString *photoID = [cellDictionary objectForKey:@"prod_id"];
         NSString *photoURLString = [NSString stringWithFormat: @"http://talkloud.com/_sears/uploads/photo_%@.jpg", photoID];
@@ -103,10 +100,25 @@
         UIImage *photoImage = [UIImage imageWithData:photoData];
         cell.productPhoto.image = photoImage;
         [cell.productPhoto setContentMode:UIViewContentModeScaleAspectFit];
-
+        
+        cell.heart.hidden = NO;
+        cell.likesLabel.text = [cellDictionary objectForKey:@"num_like"];
+        cell.likesLabel.hidden = NO;
+        
+        [cell backGroundColor];
+        cell.store_name.text  = [cellDictionary objectForKey:@"store_name"];
+        cell.store_name.hidden = NO;
+        
+        if(5>indexPath.row){
+            UIImage *medalImage = [UIImage imageNamed:[NSString stringWithFormat:@"medal_%d.png",indexPath.row+1]];
+            cell.medalImageView = [[UIImageView alloc] initWithImage:medalImage];
+            [cell.medalImageView setFrame:CGRectMake(5,5, 32, 42.5)];
+            [cell addSubview:cell.medalImageView];
+        }
     }];
 
     return cell;
 }
+
 
 @end
