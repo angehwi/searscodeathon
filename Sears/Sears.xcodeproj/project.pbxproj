@@ -37,6 +37,7 @@
 		915CD96217C95FB9001AB978 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 915CD96117C95FB9001AB978 /* Security.framework */; };
 		915CD96417C95FC2001AB978 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 915CD96317C95FC2001AB978 /* SystemConfiguration.framework */; };
 		916E678A17C94DC0005E890B /* SEARSViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 916E678917C94DC0005E890B /* SEARSViewController.m */; };
+		E51C9BBA17CA765D004A956F /* ApigeeiOSSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E51C9BB917CA765D004A956F /* ApigeeiOSSDK.framework */; };
 		E557016417CA0FD600DCC8F3 /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E557016317CA0FD600DCC8F3 /* ImageIO.framework */; };
 		E557016A17CA106D00DCC8F3 /* SEARSCatalogueViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E557016717CA106D00DCC8F3 /* SEARSCatalogueViewController.m */; };
 		E557016B17CA106D00DCC8F3 /* SEARSProductCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E557016917CA106D00DCC8F3 /* SEARSProductCell.m */; };
@@ -86,6 +87,7 @@
 		915CD96317C95FC2001AB978 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		916E678817C94DC0005E890B /* SEARSViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SEARSViewController.h; sourceTree = "<group>"; };
 		916E678917C94DC0005E890B /* SEARSViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SEARSViewController.m; sourceTree = "<group>"; };
+		E51C9BB917CA765D004A956F /* ApigeeiOSSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ApigeeiOSSDK.framework; sourceTree = "<group>"; };
 		E557016317CA0FD600DCC8F3 /* ImageIO.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ImageIO.framework; path = System/Library/Frameworks/ImageIO.framework; sourceTree = SDKROOT; };
 		E557016617CA106D00DCC8F3 /* SEARSCatalogueViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SEARSCatalogueViewController.h; sourceTree = "<group>"; };
 		E557016717CA106D00DCC8F3 /* SEARSCatalogueViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SEARSCatalogueViewController.m; sourceTree = "<group>"; };
@@ -111,6 +113,7 @@
 				9126FA0817C94CF000CF4F25 /* Foundation.framework in Frameworks */,
 				9126FA0C17C94CF000CF4F25 /* CoreData.framework in Frameworks */,
 				E557017117CA111E00DCC8F3 /* SDWebImage.framework in Frameworks */,
+				E51C9BBA17CA765D004A956F /* ApigeeiOSSDK.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -138,6 +141,7 @@
 		9126FA0417C94CF000CF4F25 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				E51C9BB917CA765D004A956F /* ApigeeiOSSDK.framework */,
 				E557017017CA111E00DCC8F3 /* SDWebImage.framework */,
 				915CD96317C95FC2001AB978 /* SystemConfiguration.framework */,
 				915CD96117C95FB9001AB978 /* Security.framework */,
@@ -431,7 +435,11 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Sears/Sears-Prefix.pch";
 				INFOPLIST_FILE = "Sears/Sears-Info.plist";
-				OTHER_LDFLAGS = "-ObjC";
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"-ObjC",
+					"-all_load",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -448,7 +456,11 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Sears/Sears-Prefix.pch";
 				INFOPLIST_FILE = "Sears/Sears-Info.plist";
-				OTHER_LDFLAGS = "-ObjC";
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"-ObjC",
+					"-all_load",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
