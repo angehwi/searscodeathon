@@ -222,7 +222,6 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Hun-BS-sHy">
                                 <constraints>
                                     <constraint firstAttribute="height" constant="320" id="h4P-Wu-UKO"/>
-                                    <constraint firstAttribute="width" constant="320" id="nos-pe-ZWc"/>
                                 </constraints>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BFx-1A-j4R">
@@ -240,41 +239,6 @@
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6KV-mn-zJn">
                                 <subviews>
-                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rKs-PP-ud2">
-                                        <fontDescription key="fontDescription" type="system" pointSize="21"/>
-                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Price" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1FO-JO-seo">
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Date" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mLF-zM-SA2">
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Store" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="H6b-8H-w5l">
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FDx-Sq-vzD">
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xmg-S7-LJf">
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Labelll" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1qi-IF-pc9">
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XNr-Wt-wGB">
                                         <constraints>
                                             <constraint firstAttribute="height" constant="128" id="6rT-mf-jNl"/>
@@ -283,38 +247,25 @@
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstItem="1qi-IF-pc9" firstAttribute="centerX" secondItem="H6b-8H-w5l" secondAttribute="centerX" type="default" id="0Db-Nh-Qcx"/>
                                     <constraint firstItem="XNr-Wt-wGB" firstAttribute="leading" secondItem="6KV-mn-zJn" secondAttribute="leading" type="default" id="BEc-v9-dOF"/>
-                                    <constraint firstItem="XNr-Wt-wGB" firstAttribute="centerX" secondItem="Xmg-S7-LJf" secondAttribute="centerX" type="default" id="HjQ-Cu-frM"/>
-                                    <constraint firstItem="1FO-JO-seo" firstAttribute="baseline" secondItem="mLF-zM-SA2" secondAttribute="baseline" type="default" id="Mfy-em-cSe"/>
-                                    <constraint firstItem="rKs-PP-ud2" firstAttribute="top" secondItem="6KV-mn-zJn" secondAttribute="top" constant="20" symbolic="YES" type="default" id="T1i-zk-05O"/>
-                                    <constraint firstItem="1qi-IF-pc9" firstAttribute="baseline" secondItem="Xmg-S7-LJf" secondAttribute="baseline" type="default" id="TV5-BK-MdS"/>
-                                    <constraint firstItem="FDx-Sq-vzD" firstAttribute="top" secondItem="6KV-mn-zJn" secondAttribute="top" constant="89" id="W0w-ST-ftO"/>
-                                    <constraint firstItem="FDx-Sq-vzD" firstAttribute="centerX" secondItem="mLF-zM-SA2" secondAttribute="centerX" type="default" id="aFU-3g-927"/>
-                                    <constraint firstAttribute="trailing" secondItem="1qi-IF-pc9" secondAttribute="trailing" constant="18" id="cqL-JY-skK"/>
-                                    <constraint firstItem="mLF-zM-SA2" firstAttribute="leading" secondItem="6KV-mn-zJn" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="kpY-Fv-qex"/>
                                     <constraint firstAttribute="height" constant="239" id="szN-gH-dJg"/>
-                                    <constraint firstItem="Xmg-S7-LJf" firstAttribute="baseline" secondItem="FDx-Sq-vzD" secondAttribute="baseline" type="default" id="uFD-rM-gIN"/>
-                                    <constraint firstItem="1FO-JO-seo" firstAttribute="baseline" secondItem="H6b-8H-w5l" secondAttribute="baseline" type="default" id="uTw-aJ-B5d"/>
-                                    <constraint firstItem="mLF-zM-SA2" firstAttribute="top" secondItem="6KV-mn-zJn" secondAttribute="top" constant="64" id="xEW-4d-f3t"/>
                                     <constraint firstItem="XNr-Wt-wGB" firstAttribute="top" secondItem="6KV-mn-zJn" secondAttribute="top" constant="125" id="yQU-X5-TyQ"/>
-                                    <constraint firstItem="rKs-PP-ud2" firstAttribute="leading" secondItem="FDx-Sq-vzD" secondAttribute="leading" type="default" id="ykp-D6-fXU"/>
-                                    <constraint firstItem="1FO-JO-seo" firstAttribute="centerX" secondItem="Xmg-S7-LJf" secondAttribute="centerX" type="default" id="yye-KH-NVL"/>
                                     <constraint firstItem="XNr-Wt-wGB" firstAttribute="trailing" secondItem="6KV-mn-zJn" secondAttribute="trailing" type="default" id="zxD-RQ-76e"/>
                                 </constraints>
                             </view>
                         </subviews>
                         <constraints>
-                            <constraint firstItem="Hun-BS-sHy" firstAttribute="leading" secondItem="698-eI-cX8" secondAttribute="leading" constant="-1" id="9Yb-GL-6UJ"/>
                             <constraint firstItem="BFx-1A-j4R" firstAttribute="top" secondItem="Hun-BS-sHy" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="ITK-M3-7BD"/>
+                            <constraint firstItem="Hun-BS-sHy" firstAttribute="leading" secondItem="698-eI-cX8" secondAttribute="leading" type="default" id="O7n-zs-uxK"/>
                             <constraint firstItem="BFx-1A-j4R" firstAttribute="leading" secondItem="698-eI-cX8" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="QL4-Gx-1N3"/>
                             <constraint firstItem="Hun-BS-sHy" firstAttribute="top" secondItem="698-eI-cX8" secondAttribute="top" type="default" id="Ukb-cG-gAf"/>
                             <constraint firstItem="6KV-mn-zJn" firstAttribute="top" secondItem="BFx-1A-j4R" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="azy-5O-fGA"/>
                             <constraint firstAttribute="bottom" secondItem="BFx-1A-j4R" secondAttribute="bottom" constant="45" id="c8c-Mb-SU0"/>
+                            <constraint firstItem="Hun-BS-sHy" firstAttribute="trailing" secondItem="698-eI-cX8" secondAttribute="trailing" type="default" id="fD1-Xz-pCH"/>
                             <constraint firstItem="6KV-mn-zJn" firstAttribute="trailing" secondItem="698-eI-cX8" secondAttribute="trailing" type="default" id="nyy-uK-tbs"/>
                             <constraint firstAttribute="trailing" secondItem="BFx-1A-j4R" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="pg0-Ay-gqV"/>
                             <constraint firstItem="6KV-mn-zJn" firstAttribute="leading" secondItem="698-eI-cX8" secondAttribute="leading" type="default" id="rpV-D1-Ozh"/>
-                            <constraint firstItem="BFx-1A-j4R" firstAttribute="centerX" secondItem="698-eI-cX8" secondAttribute="centerX" type="default" id="wRw-2k-R7O"/>
+                            <constraint firstItem="Hun-BS-sHy" firstAttribute="centerX" secondItem="698-eI-cX8" secondAttribute="centerX" type="default" id="yc7-eL-rMo"/>
                         </constraints>
                         <connections>
                             <outlet property="delegate" destination="vpc-Kr-Hng" id="SR1-vW-2uR"/>
@@ -325,11 +276,8 @@
                         <outlet property="addDetailButton" destination="BFx-1A-j4R" id="TNU-NQ-y6t"/>
                         <outlet property="contentScrollView" destination="698-eI-cX8" id="29w-4d-3hc"/>
                         <outlet property="detailInfoView" destination="6KV-mn-zJn" id="0mw-CL-bu4"/>
-                        <outlet property="likeDate" destination="FDx-Sq-vzD" id="cwg-4F-Lel"/>
                         <outlet property="photoView" destination="Hun-BS-sHy" id="Njb-hw-d2P"/>
-                        <outlet property="productName" destination="rKs-PP-ud2" id="Ck8-Oa-Vra"/>
-                        <outlet property="productPrice" destination="Xmg-S7-LJf" id="Qqs-T8-aFu"/>
-                        <outlet property="store" destination="1qi-IF-pc9" id="zDG-Qa-p8o"/>
+                        <outlet property="searsPhotoView" destination="XNr-Wt-wGB" id="HXu-Ld-vHk"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vOe-Mw-g2s" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -461,80 +409,6 @@
         <image name="camera.png" width="30" height="30"/>
         <image name="heart.png" width="80" height="69"/>
     </resources>
-    <classes>
-        <class className="NSLayoutConstraint" superclassName="NSObject">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
-        </class>
-        <class className="SEARSCatalogueViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/SEARSCatalogueViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="searchButtonPressed:"/>
-                <relationship kind="outlet" name="keywordTextField" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="productTableView" candidateClass="UITableView"/>
-                <relationship kind="outlet" name="searchButton" candidateClass="UIButton"/>
-            </relationships>
-        </class>
-        <class className="SEARSCollectionViewCell" superclassName="UICollectionViewCell">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/SEARSCollectionViewCell.h"/>
-            <relationships>
-                <relationship kind="outlet" name="heart" candidateClass="UIImageView"/>
-                <relationship kind="outlet" name="likesLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="productPhoto" candidateClass="UIImageView"/>
-                <relationship kind="outlet" name="store_name" candidateClass="UILabel"/>
-            </relationships>
-        </class>
-        <class className="SEARSCollectionViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/SEARSCollectionViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="collectionView" candidateClass="UICollectionView"/>
-            </relationships>
-        </class>
-        <class className="SEARSDetailViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/SEARSDetailViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="addDetailButton" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="contentScrollView" candidateClass="UIScrollView"/>
-                <relationship kind="outlet" name="detailInfoView" candidateClass="UIView"/>
-                <relationship kind="outlet" name="likeDate" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="photoView" candidateClass="UIImageView"/>
-                <relationship kind="outlet" name="productName" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="productPrice" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="store" candidateClass="UILabel"/>
-            </relationships>
-        </class>
-        <class className="SEARSPostViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/SEARSPostViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="postImageView" candidateClass="UIImageView"/>
-                <relationship kind="outlet" name="titleText" candidateClass="UITextField"/>
-            </relationships>
-        </class>
-        <class className="SEARSProductCell" superclassName="UITableViewCell">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/SEARSProductCell.h"/>
-            <relationships>
-                <relationship kind="outlet" name="productImage" candidateClass="UIImageView"/>
-                <relationship kind="outlet" name="productName" candidateClass="UILabel"/>
-            </relationships>
-        </class>
-        <class className="SEARSViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/SEARSViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="collectionViewContainer" candidateClass="UIView"/>
-            </relationships>
-        </class>
-        <class className="UICollectionReusableView" superclassName="UIView">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/UICollectionReusableView.h"/>
-        </class>
-        <class className="UICollectionViewCell" superclassName="UICollectionReusableView">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/UICollectionViewCell.h"/>
-        </class>
-        <class className="UICollectionViewFlowLayout" superclassName="UICollectionViewLayout">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/UICollectionViewFlowLayout.h"/>
-        </class>
-        <class className="UICollectionViewLayout" superclassName="NSObject">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/UICollectionViewLayout.h"/>
-        </class>
-    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

@@ -42,6 +42,18 @@ static SEARSHTTPModel *instance;
     return result;
 }
 
+-(NSDictionary *)getProductWithProductID:(NSString *)productID{
+    NSData *data = [self getListFromServer:@"like"];
+    NSArray *result = [self parseJSONtoArray:data];
+    for(NSDictionary *product in result){
+        if([productID isEqualToString:[product objectForKey:@"prod_id"]]){
+            return product;
+        }
+    }
+    
+    return nil;
+}
+
 
 -(NSData *)getListFromServer:(NSString *)order{
     order = @"like";
@@ -176,61 +188,81 @@ static SEARSHTTPModel *instance;
     return returnString;
 }
 -(void)updateProduct:(NSDictionary *)productDic{
-    NSLog(@"PostPhoto");
+    NSLog(@"updateProduct");
     NSString *result = [self updateProductToServer:productDic];
     
-    NSLog(@"List Info\n%@",result);
+    NSLog(@"Update Product Result:%@",result);
     //    return result;
 }
 
 -(NSString *)updateProductToServer:(NSDictionary *)productDic{
-    NSLog(@"postPhotoToServer");
-    
-//    NSString *jpegFilePath = [self saveImageWithUIImage:image];
-    //    [imageData writeToFile:@"uploadImage.jpeg" atomically:NO];
-	// setting up the URL to post to
-	NSString *urlString = @"http://talkloud.com/_sears/app.php";
-	
-	// setting up the request object now
-	NSMutableURLRequest *request = [[NSMutableURLRequest alloc] init];
-    
-	[request setHTTPMethod:@"POST"];
-    [request setCachePolicy:NSURLRequestReloadIgnoringLocalCacheData];
-    [request setHTTPShouldHandleCookies:NO];
-    [request setTimeoutInterval:30];
-    
-	NSString *boundary = [NSString stringWithString:@"---------------------------1473780983146649988274664132"];
-	NSString *contentType = [NSString stringWithFormat:@"multipart/form-data; boundary=%@",boundary];
-	[request addValue:contentType forHTTPHeaderField: @"Content-Type"];
-	
-	/*
-	 now lets create the body of the post
-     */
-	NSMutableData *body = [NSMutableData data];
-    
-    [body appendData:[[NSString stringWithFormat:@"--%@\r\n", boundary] dataUsingEncoding:NSUTF8StringEncoding]];
-    [body appendData:[[NSString stringWithFormat:@"Content-Disposition: form-data; name=\"action\"\r\n\r\nupdate\r\n"] dataUsingEncoding:NSUTF8StringEncoding]];
+    NSMutableString *urlString = [NSMutableString stringWithFormat:@"http://talkloud.com/_sears/app.php?action=update"];
     
     for(NSString *key in productDic){
-//        [body appendData:[[NSString stringWithFormat:@"--%@\r\n", boundary] dataUsingEncoding:NSUTF8StringEncoding]];
-//        [body appendData:[[NSString stringWithFormat:@"Content-Disposition: form-data; name=\"%@\"\r\n\r\n%@\r\n", key, [productArray objectForKey:key]  ] dataUsingEncoding:NSUTF8StringEncoding]];
-        NSLog(@"Key: %@", key);
+        
+        [urlString appendString:[NSString stringWithFormat:@"&%@=%@",key, [productDic objectForKey:key]]];
+        
     }
+
+//    NSString *newURL = [NSString stringWithFormat:@"%@", urlString];
+//    newURL = [self encodeURL:newURL];
+    urlString = [urlString stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
     
-	[body appendData:[[NSString stringWithFormat:@"\r\n--%@--",boundary] dataUsingEncoding:NSUTF8StringEncoding]];
-	// setting the body of the post to the reqeust
-	[request setHTTPBody:body];
-    
-    [request setURL:[NSURL URLWithString:urlString]];
-	
-	// now lets make the connection to the web
-//	NSData *returnData = [NSURLConnection sendSynchronousRequest:request returningResponse:nil error:nil];
-//	NSString *returnString = [[NSString alloc] initWithData:returnData encoding:NSUTF8StringEncoding];
-	
-    //	NSLog(@"Return: %@", returnString);
-    return nil;
-//    return returnString;
+    NSLog(@"UpdateURL: %@", urlString);
+    NSURL *url = [NSURL URLWithString:urlString];
+    NSData *data= [NSData dataWithContentsOfURL:url];
+    NSString *returnString = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
+
+    return returnString;
 }
+//-(NSString *)updateProductToServer:(NSDictionary *)productDic{
+//    NSLog(@"postPhotoToServer");
+//    
+////    NSString *jpegFilePath = [self saveImageWithUIImage:image];
+//    //    [imageData writeToFile:@"uploadImage.jpeg" atomically:NO];
+//	// setting up the URL to post to
+//	NSString *urlString = @"http://talkloud.com/_sears/app.php";
+//	
+//	// setting up the request object now
+//	NSMutableURLRequest *request = [[NSMutableURLRequest alloc] init];
+//    
+//	[request setHTTPMethod:@"POST"];
+//    [request setCachePolicy:NSURLRequestReloadIgnoringLocalCacheData];
+//    [request setHTTPShouldHandleCookies:NO];
+//    [request setTimeoutInterval:30];
+//    
+//	NSString *boundary = [NSString stringWithString:@"---------------------------1473780983146649988274664132"];
+//	NSString *contentType = [NSString stringWithFormat:@"multipart/form-data; boundary=%@",boundary];
+//	[request addValue:contentType forHTTPHeaderField: @"Content-Type"];
+//	
+//	/*
+//	 now lets create the body of the post
+//     */
+//	NSMutableData *body = [NSMutableData data];
+//    
+//    [body appendData:[[NSString stringWithFormat:@"--%@\r\n", boundary] dataUsingEncoding:NSUTF8StringEncoding]];
+//    [body appendData:[[NSString stringWithFormat:@"Content-Disposition: form-data; name=\"action\"\r\n\r\nupdate\r\n"] dataUsingEncoding:NSUTF8StringEncoding]];
+//    
+//    for(NSString *key in productDic){
+////        [body appendData:[[NSString stringWithFormat:@"--%@\r\n", boundary] dataUsingEncoding:NSUTF8StringEncoding]];
+////        [body appendData:[[NSString stringWithFormat:@"Content-Disposition: form-data; name=\"%@\"\r\n\r\n%@\r\n", key, [productArray objectForKey:key]  ] dataUsingEncoding:NSUTF8StringEncoding]];
+//        NSLog(@"Key: %@", key);
+//    }
+//    
+//	[body appendData:[[NSString stringWithFormat:@"\r\n--%@--",boundary] dataUsingEncoding:NSUTF8StringEncoding]];
+//	// setting the body of the post to the reqeust
+//	[request setHTTPBody:body];
+//    
+//    [request setURL:[NSURL URLWithString:urlString]];
+//	
+//	// now lets make the connection to the web
+////	NSData *returnData = [NSURLConnection sendSynchronousRequest:request returningResponse:nil error:nil];
+////	NSString *returnString = [[NSString alloc] initWithData:returnData encoding:NSUTF8StringEncoding];
+//	
+//    //	NSLog(@"Return: %@", returnString);
+//    return nil;
+////    return returnString;
+//}
 #pragma mark - JSON Parsing
 
 -(NSArray *)parseJSONtoArray:(NSData *)data{
