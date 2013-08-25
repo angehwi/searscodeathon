@@ -34,9 +34,7 @@
 {
     [super viewDidLoad];
     httpModel = [SEARSHTTPModel sharedHTTPModel];
-    NSDictionary *searchResults = [httpModel getProductsWithKeyword:@"hello"];
-    products = [[searchResults objectForKey:@"SearchResults"] objectForKey:@"Products"];
-    [self.productTableView reloadData];
+    [self.keywordTextField becomeFirstResponder];
 }
 
 - (void)didReceiveMemoryWarning
@@ -69,11 +67,16 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     NSDictionary *productDict = [products objectAtIndex:indexPath.row];
     [_delegate addDetailInformation:productDict];
-
     [[self navigationController] popViewControllerAnimated:NO];
 }
 
-
+- (IBAction)searchButtonPressed:(id)sender {
+    NSDictionary *searchResults = [httpModel getProductsWithKeyword:self.keywordTextField.text];
+    products = [[searchResults objectForKey:@"SearchResults"] objectForKey:@"Products"];
+    [self.keywordTextField resignFirstResponder];
+    [self.productTableView reloadData];
+    
+}
 
 
 
