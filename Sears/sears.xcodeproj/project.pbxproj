@@ -46,15 +46,15 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		9126FA0217C94CF000CF4F25 /* Sears.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Sears.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		9126FA0217C94CF000CF4F25 /* sears.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = sears.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9126FA0517C94CF000CF4F25 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		9126FA0717C94CF000CF4F25 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		9126FA0917C94CF000CF4F25 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		9126FA0B17C94CF000CF4F25 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
-		9126FA0F17C94CF000CF4F25 /* Sears-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Sears-Info.plist"; sourceTree = "<group>"; };
+		9126FA0F17C94CF000CF4F25 /* sears-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "sears-Info.plist"; sourceTree = "<group>"; };
 		9126FA1117C94CF000CF4F25 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		9126FA1317C94CF000CF4F25 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		9126FA1517C94CF000CF4F25 /* Sears-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Sears-Prefix.pch"; sourceTree = "<group>"; };
+		9126FA1517C94CF000CF4F25 /* sears-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "sears-Prefix.pch"; sourceTree = "<group>"; };
 		9126FA1617C94CF000CF4F25 /* SEARSAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SEARSAppDelegate.h; sourceTree = "<group>"; };
 		9126FA1717C94CF000CF4F25 /* SEARSAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SEARSAppDelegate.m; sourceTree = "<group>"; };
 		9126FA1917C94CF000CF4F25 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
@@ -133,7 +133,7 @@
 		9126FA0317C94CF000CF4F25 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				9126FA0217C94CF000CF4F25 /* Sears.app */,
+				9126FA0217C94CF000CF4F25 /* sears.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -176,10 +176,10 @@
 		9126FA0E17C94CF000CF4F25 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				9126FA0F17C94CF000CF4F25 /* Sears-Info.plist */,
+				9126FA0F17C94CF000CF4F25 /* sears-Info.plist */,
 				9126FA1017C94CF000CF4F25 /* InfoPlist.strings */,
 				9126FA1317C94CF000CF4F25 /* main.m */,
-				9126FA1517C94CF000CF4F25 /* Sears-Prefix.pch */,
+				9126FA1517C94CF000CF4F25 /* sears-Prefix.pch */,
 				9126FA1917C94CF000CF4F25 /* Default.png */,
 				9126FA1B17C94CF000CF4F25 /* Default@2x.png */,
 				9126FA1D17C94CF000CF4F25 /* Default-568h@2x.png */,
@@ -267,9 +267,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		9126FA0117C94CF000CF4F25 /* Sears */ = {
+		9126FA0117C94CF000CF4F25 /* sears */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 9126FA2417C94CF000CF4F25 /* Build configuration list for PBXNativeTarget "Sears" */;
+			buildConfigurationList = 9126FA2417C94CF000CF4F25 /* Build configuration list for PBXNativeTarget "sears" */;
 			buildPhases = (
 				9126F9FE17C94CF000CF4F25 /* Sources */,
 				9126F9FF17C94CF000CF4F25 /* Frameworks */,
@@ -279,9 +279,9 @@
 			);
 			dependencies = (
 			);
-			name = Sears;
+			name = sears;
 			productName = Sears;
-			productReference = 9126FA0217C94CF000CF4F25 /* Sears.app */;
+			productReference = 9126FA0217C94CF000CF4F25 /* sears.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -294,7 +294,7 @@
 				LastUpgradeCheck = 0460;
 				ORGANIZATIONNAME = SEARS;
 			};
-			buildConfigurationList = 9126F9FD17C94CF000CF4F25 /* Build configuration list for PBXProject "Sears" */;
+			buildConfigurationList = 9126F9FD17C94CF000CF4F25 /* Build configuration list for PBXProject "sears" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -306,7 +306,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				9126FA0117C94CF000CF4F25 /* Sears */,
+				9126FA0117C94CF000CF4F25 /* sears */,
 			);
 		};
 /* End PBXProject section */
@@ -433,14 +433,14 @@
 					"\"$(SRCROOT)\"",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "Sears/Sears-Prefix.pch";
-				INFOPLIST_FILE = "Sears/Sears-Info.plist";
+				GCC_PREFIX_HEADER = "Sears/sears-Prefix.pch";
+				INFOPLIST_FILE = "Sears/sears-Info.plist";
 				OTHER_LDFLAGS = (
 					"-ObjC",
 					"-ObjC",
 					"-all_load",
 				);
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = sears;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -454,14 +454,14 @@
 					"\"$(SRCROOT)\"",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "Sears/Sears-Prefix.pch";
-				INFOPLIST_FILE = "Sears/Sears-Info.plist";
+				GCC_PREFIX_HEADER = "Sears/sears-Prefix.pch";
+				INFOPLIST_FILE = "Sears/sears-Info.plist";
 				OTHER_LDFLAGS = (
 					"-ObjC",
 					"-ObjC",
 					"-all_load",
 				);
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = sears;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
@@ -469,7 +469,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		9126F9FD17C94CF000CF4F25 /* Build configuration list for PBXProject "Sears" */ = {
+		9126F9FD17C94CF000CF4F25 /* Build configuration list for PBXProject "sears" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				9126FA2217C94CF000CF4F25 /* Debug */,
@@ -478,7 +478,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		9126FA2417C94CF000CF4F25 /* Build configuration list for PBXNativeTarget "Sears" */ = {
+		9126FA2417C94CF000CF4F25 /* Build configuration list for PBXNativeTarget "sears" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				9126FA2517C94CF000CF4F25 /* Debug */,
