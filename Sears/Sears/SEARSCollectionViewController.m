@@ -10,6 +10,7 @@
 #import "SEARSCollectionViewCell.h"
 #import "SEARSCollectionViewFlowLayout.h"
 #import "SEARSHTTPModel.h"
+#import "SEARSDetailViewController.h"
 #import <SDWebImage/UIImageView+WebCache.h>
 @interface SEARSCollectionViewController ()
 
@@ -54,7 +55,14 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+    NSLog(@"prepareForSegue");
+    SEARSCollectionViewCell *cell = (SEARSCollectionViewCell *)sender;
+    if([@"DETAIL_SEGUE" isEqualToString:segue.identifier]){
+        SEARSDetailViewController *detailController = (SEARSDetailViewController *)segue.destinationViewController;
+        detailController.dict = [listArray objectAtIndex:[self.collectionView indexPathForCell:cell].row];
+    }
+}
 
 #pragma mark - CollectionView Layout
 
